@@ -6,11 +6,13 @@ import siteConfig from "./siteConfig";
 function getInitialLang() {
   if (typeof localStorage !== "undefined") {
     const saved = localStorage.getItem("lang");
-    if (saved === "fr" || saved === "en") return saved;
+    if (saved === "fr" || saved === "en" || saved === "de") return saved;
   }
   if (typeof navigator !== "undefined") {
     const nav = (navigator.language || "").toLowerCase();
     if (nav.startsWith("fr")) return "fr";
+    if (nav.startsWith("de")) return "de";
+    if (nav.startsWith("en")) return "en";
   }
   return "fr";
 }
@@ -30,7 +32,7 @@ function LanguageToggle({ value, onChange, labels }) {
         boxShadow: "var(--shadow-1)",
       }}
     >
-      {["fr", "en"].map((l) => {
+      {["fr", "en", "de"].map((l) => {
         const active = value === l;
         return (
           <button
@@ -94,6 +96,8 @@ export default function App() {
       const desc =
         lang === "fr"
           ? `${name || ""} — CV. ${role || ""}`
+          : lang === "de"
+          ? `${name || ""} — Lebenslauf / Portfolio. ${role || ""}`
           : `${name || ""} — CV / Portfolio. ${role || ""}`;
       meta.setAttribute("content", desc.trim());
     }
@@ -205,10 +209,13 @@ export default function App() {
                       </div>
                       {r.company && (
                         <div className="contact-item small-muted">
-                          <img
-                            className="experience-logo"
-                            src={`${logoBase}tevearfconsulting_logo.png`}
-                          />
+                          {companyLogos[r.company] ? (
+                            <img
+                              className="experience-logo"
+                              src={companyLogos[r.company]}
+                              alt={`${r.company} logo`}
+                            />
+                          ) : null}
                           <span>{r.company}</span>
                         </div>
                       )}

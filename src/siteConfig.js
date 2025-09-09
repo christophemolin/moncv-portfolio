@@ -414,6 +414,201 @@ const siteConfig = {
       "Parent association volunteer",
     ],
   },
+
+  de: {
+    ui: {
+      profile: "Profil",
+      contact: "Kontakt",
+      competencies: "Kernkompetenzen",
+      experience: "Erfahrung",
+      education: "Ausbildung",
+      languages: "Sprachen",
+      interests: "Interessen",
+      website: "Webseite",
+      linkedin: "LinkedIn",
+      email: "E‑Mail",
+      phone: "Telefon",
+      nationality: "Staatsangehörigkeit",
+      address: "Adresse",
+      toggleLabel: "Sprache",
+      fr: "FR",
+      en: "EN",
+      other: "Weitere Erfahrungen",
+    },
+
+    name: "Prénom NOM",
+    role: "Leiterin Kundenbeziehungen — Bereich Key Accounts (Umsatzsteuer)",
+    location: "Maisons‑Laffitte, Frankreich",
+    email: "email@yahoo.fr",
+    phone: "+33 1 23 45 67 89",
+    nationality: "Deutsch‑Französisch",
+
+    summary: [
+      "15+ Jahre Erfahrung in Key‑Account‑Betreuung, Projektsteuerung und Prozessverbesserung.",
+      "Leitung von Kundenterminen, Schulungen und Rollouts; Sammlung und Konsolidierung teamübergreifender Informationen.",
+      "Business Development: Angebote, Verhandlungen und Ausbau des Kundenportfolios.",
+    ],
+
+    competencies: [
+      "Key‑Account‑Management und Kundenbeziehungen",
+      "Projektgovernance und teamübergreifende Koordination",
+      "Prozessdesign und kontinuierliche Verbesserung (VAT/Mehrwertsteuer)",
+      "Kundenkomitees, Workshops und Schulungen",
+      "Kommerzielle Angebote und Verhandlungen",
+    ],
+
+    experience: [
+      {
+        title: "Leitung Bereich Kundenbeziehungen",
+        company: "TEVEA RF Consulting",
+        period: "Jan 2022 — Heute · Paris, Île‑de‑France (Hybrid)",
+        points: [
+          "Führung des Bereichs Kundenbeziehungen (People Leadership, Performance).",
+          "Verantwortung für Kundenzufriedenheit und Relationship‑Governance.",
+          "Kontinuierliche Verbesserung von VAT‑bezogenen Prozessen.",
+          "Überwachung von KPIs und Umsetzung von Maßnahmenplänen."
+        ]
+      },
+      {
+        title: "Senior Account Manager",
+        company: "TEVEA RF Consulting",
+        period: "Jan 2017 — Dez 2021 · Großraum Paris, Frankreich",
+        points: [
+          "Betreuung, Entwicklung und Ausbau eines Kundenportfolios.",
+          "Einführung eines Qualitäts‑KYC und Erfassung von Kundenbedürfnissen.",
+          "Organisation und Moderation von Kundenterminen.",
+          "Vorschläge für Marketing/Vertrieb und Prozessverbesserungen.",
+          "Vertrieb des kompletten VAT‑Leistungsangebots."
+        ]
+      },
+      {
+        title: "Key Account Manager",
+        company: "Directskills",
+        period: "Okt 2015 — Mai 2026",
+        points: [
+          "Verantwortung für Großkunden in Frankreich: Scoping, Follow‑up, Zufriedenheit.",
+          "Organisation und Durchführung von Kundenterminen (Steering, Workshops).",
+          "Koordination und Implementierung von Kundenprozessen.",
+          "Dokumentation und Pflege von Prozessunterlagen.",
+          "Sammlung/Konsolidierung von Informationen zwischen Kunde und internen Teams.",
+          "Identifikation von Marktbedürfnissen; Feedback zu Produkt/Service‑Weiterentwicklungen.",
+          "Initiierung und Begleitung neuer Projekte (Rollouts, Weiterentwicklungen).",
+          "Erstellung und Verteidigung von Angeboten; Portfoliowachstum.",
+        ],
+        about:
+          "Directskills optimiert den Einsatz von Zeitarbeit in Frankreich (Einkaufsberatung, Cloud‑Lösung BAPS‑Intérim und Outsourcing‑Services).",
+      },
+      {
+        title: "Key Clients Relations Manager",
+        company: "Lowendalmasaï",
+        period: "Apr 2008 — Okt 2015",
+        points: [
+          "Betreuung von Schlüsselkunden in Frankreich und international (End‑to‑End‑Beziehung).",
+          "Leitung von Kundenterminen; Erstellung von Unterlagen und Durchführung von Schulungen.",
+          "Koordination von Produktionsprozessen und Erstellung von Verfahren.",
+          "Sammlung, Konsolidierung und Weitergabe von Informationen über Teams hinweg.",
+          "Start und Mitarbeit an neuen Projekten.",
+          "Ausarbeitung, Validierung und Verteidigung von Angeboten; Portfolioausbau.",
+        ],
+        about:
+          "Beratungsunternehmen für Kostenmanagement; 425 Mitarbeitende; Präsenz in 9 Ländern.",
+      },
+      {
+        title: "Account Manager",
+        company: "Lowendalmasaï",
+        period: "Sep 2006 — Mär 2008",
+        points: [
+          "Akquise, Verhandlung und Vertragsabschluss (CEO, CFO).",
+          "Portfolioentwicklung und ganzheitliche Kundenbeziehung.",
+        ],
+      },
+      {
+        title: "Sales Assistant — Luft‑ und Raumfahrt",
+        company: "Trelleborg Sealing Solutions France",
+        period: "Okt 2005 — Jul 2006",
+        points: [
+          "Internationale Kundenbetreuung; Auftragserfassung.",
+          "Vertragsgestaltung; Einkaufs‑ und Verkaufsverhandlungen.",
+        ],
+      },
+      {
+        title: "Sales Assistant — Steuerabteilung",
+        company: "Deutsch‑Französische IHK (CCFA), Saarbrücken",
+        period: "Jan 2005 — Jun 2005",
+        points: [
+          "Gezielte Ansprache zur Rückforderung ausländischer Mehrwertsteuer.",
+          "Aufbau Kundendatenbank, Mailings; Betreuung DE/FR‑Kundenbeziehungen.",
+        ],
+      },
+      {
+        title: "Marketing & Sales Assistant",
+        company: "Croso France",
+        period: "2002 — 2004",
+        points: [
+          "Organisation von Events und Messen; Pressemappen.",
+          "Schaltung von Anzeigen und Messung der Wirkung.",
+          "Kundenbetreuung und Auftragserfassung.",
+        ],
+      }
+    ],
+
+    otherExperience: [
+      {
+        title: "Praktikum — Corporate Finance",
+        company: "CIC (Crédit Industriel et Commercial)",
+        period: "Apr 2002 — Mai 2002",
+        points: [
+          "Unterlagen für M&A; Teilnahme an Finanzsitzungen.",
+        ],
+      },
+      {
+        title: "Praktikum — Hotellerie (Rezeption)",
+        company: "IBIS Hotel — Frankfurt (DE)",
+        period: "Jul 2001 — Aug 2001",
+        points: [
+          "Empfang, Check‑in/Check‑out; Reservierungsplanung; Zufriedenheitsumfragen.",
+        ],
+      },
+      {
+        title: "Rezeptionistin",
+        company: "Regents Garden",
+        period: "Jul 2000 — Aug 2000",
+        points: ["Empfang, Reservierungsmanagement."],
+      },
+      {
+        title: "Assistenz — Verwaltung",
+        company: "B. Braun Medical",
+        period: "Jul 1999",
+        points: ["Verschiedene administrative Aufgaben."],
+      },
+    ],
+
+    education: [
+      {
+        title:
+          "Wirtschaftshochschule (ISEE) — Paris (2002–2004)",
+        detail: "Abschluss anerkannt auf Niveau II (FR).",
+      },
+      {
+        title: "IUT de Sceaux (2000–2002)",
+        detail:
+          "DUT Vertriebstechniken, Schwerpunkt Internationaler Handel.",
+      },
+      {
+        title:
+          "Lycée Jeanne d’Albret — Saint‑Germain‑en‑Laye (2000)",
+        detail: "Abitur (Literatur).",
+      },
+    ],
+
+    languages: ["Französisch (Muttersprache)", "Deutsch (fließend)", "Englisch (lesen, schreiben, sprechen)"],
+    interests: [
+      "Schwimmen (Freizeit)",
+      "Kino, Ausstellungen, Theater",
+      "Eltern‑Vereinsarbeit",
+    ],
+  },
+
 };
 
 export default siteConfig;
