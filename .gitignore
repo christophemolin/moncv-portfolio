@@ -1,0 +1,34 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Vite
+dist/
+.vite
+
+# OS
+.DS_Store
+
+# Env files (do not commit secrets)
+.env
+.env.*
+!.env.example
+
+# Editors/IDE
+.vscode/
+.idea/
+*.swp
+
+# Tests/Coverage
+coverage/
+*.lcov
+
+# Lint cache
+.eslintcache
+
+# GitHub Pages build output is in /docs and MUST be committed
+# docs/  <-- intentionally NOT ignored
