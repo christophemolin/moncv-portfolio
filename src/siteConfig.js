@@ -72,7 +72,7 @@ const siteConfig = {
       {
         title: "Directrice Pôle Chargés de Comptes",
         company: "TEVEA RF Consulting",
-        period: "Janv. 2022 — Aujourd’hui · Paris, Île-de-France (Hybride)",
+        period: "Janv. 2022 — Aujourd’hui",
         points: [
           "Direction du pôle Chargés de Comptes (management et performance).",
           "Pilotage de la relation client et de la satisfaction.",
@@ -83,7 +83,7 @@ const siteConfig = {
       {
         title: "Gestionnaire de Comptes Senior — Senior Account Manager",
         company: "TEVEA RF Consulting",
-        period: "Janv. 2017 — Déc. 2021 · Paris, Île-de-France",
+        period: "Janv. 2017 — Déc. 2021",
         points: [
           "Gestion / Animation / Développement d’un portefeuille clients.",
           "Mise en œuvre d’un KYC Qualité et formalisation des besoins.",
@@ -267,7 +267,7 @@ const siteConfig = {
       {
         title: "Client Relationship Department Director",
         company: "TEVEA RF Consulting",
-        period: "Jan 2022 — Present · Paris, Île-de-France (Hybrid)",
+        period: "Jan 2022 — Present",
         points: [
           "Led the Client Relationship department (people leadership and performance).",
           "Owned client satisfaction and relationship governance.",
@@ -278,7 +278,7 @@ const siteConfig = {
       {
         title: "Senior Account Manager",
         company: "TEVEA RF Consulting",
-        period: "Jan 2017 — Dec 2021 · Paris Area, France",
+        period: "Jan 2017 — Dec 2021",
         points: [
           "Managed, animated and grew a client portfolio.",
           "Implemented Quality KYC and captured client/prospect needs.",
@@ -461,7 +461,7 @@ const siteConfig = {
       {
         title: "Leitung Bereich Kundenbeziehungen",
         company: "TEVEA RF Consulting",
-        period: "Jan 2022 — Heute · Paris, Île‑de‑France (Hybrid)",
+        period: "Jan 2022 — Heute",
         points: [
           "Führung des Bereichs Kundenbeziehungen (People Leadership, Performance).",
           "Verantwortung für Kundenzufriedenheit und Relationship‑Governance.",
@@ -472,7 +472,7 @@ const siteConfig = {
       {
         title: "Senior Account Manager",
         company: "TEVEA RF Consulting",
-        period: "Jan 2017 — Dez 2021 · Großraum Paris, Frankreich",
+        period: "Jan 2017 — Dez 2021",
         points: [
           "Betreuung, Entwicklung und Ausbau eines Kundenportfolios.",
           "Einführung eines Qualitäts‑KYC und Erfassung von Kundenbedürfnissen.",

@@ -78,6 +78,29 @@ export default function App() {
   const [showOther, setShowOther] = useState(false);
   const t = siteConfig[lang];
 
+  function formatDuration(periodStr) {
+    try {
+      const s = String(periodStr || "");
+      const years = Array.from(s.matchAll(/\b(19|20)\d{2}\b/g)).map(m => parseInt(m[0], 10));
+      if (years.length === 0) return "";
+      const startYear = years[0];
+      const now = new Date();
+      const presentRegex = /(Aujourd|Présent|Present|Heute)/i;
+      const endYear = years[1] && !presentRegex.test(s) ? years[1] : now.getFullYear();
+      let months = Math.max(0, (endYear - startYear) * 12);
+      if (months === 0) months = 12; // fallback when only a single year is present
+      if (months < 24) {
+        const n = Math.round(months);
+        return lang === "fr" ? `${n} mois` : lang === "de" ? `${n} Monate` : `${n} months`;
+      } else {
+        const y = Math.round(months / 12);
+        return lang === "fr" ? `${y} ans` : lang === "de" ? `${y} Jahre` : `${y} years`;
+      }
+    } catch {
+      return "";
+    }
+  }
+
   const fileBaseName = (siteConfig[lang]?.name || "CV")
     .replace(/[^\w\s-]/g, "")
     .replace(/\s+/g, "_");
@@ -502,9 +525,16 @@ img { max-width: 100%; height: auto; }
                           alt={`${exp.company} logo`}
                         />
                       )}
-                      <h3>{exp.title}</h3>
-                      <span className="muted">— {exp.company}</span>
-                      {exp.period && <span className="period">{exp.period}</span>}
+                      <div className="exp-headings">
+                        <h3>{exp.title}</h3>
+                        {exp.company && <div className="company-line">{exp.company}</div>}
+                      </div>
+                      {exp.period && (
+                        <span className="period">
+                          {exp.period}
+                          {formatDuration(exp.period) ? ` • ${formatDuration(exp.period)}` : ""}
+                        </span>
+                      )}
                     </div>
                     {Array.isArray(exp.points) && (
                       <ul className="list">
@@ -573,9 +603,16 @@ img { max-width: 100%; height: auto; }
                           alt={`${exp.company} logo`}
                         />
                       )}
-                      <h3>{exp.title}</h3>
-                      <span className="muted">— {exp.company}</span>
-                      {exp.period && <span className="period">{exp.period}</span>}
+                      <div className="exp-headings">
+                        <h3>{exp.title}</h3>
+                        {exp.company && <div className="company-line">{exp.company}</div>}
+                      </div>
+                      {exp.period && (
+                        <span className="period">
+                          {exp.period}
+                          {formatDuration(exp.period) ? ` • ${formatDuration(exp.period)}` : ""}
+                        </span>
+                      )}
                     </div>
                         {Array.isArray(exp.points) && (
                           <ul className="list">

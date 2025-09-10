@@ -210,15 +210,29 @@ h3 {
   flex-wrap: wrap;
 }
 .experience-logo {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  flex: 0 0 36px; /* keep consistent size & alignment */
+  flex: 0 0 44px; /* keep consistent size & alignment */
 }
 .experience-meta .period {
   margin-left: auto;
   color: var(--color-secondary);
   font-size: 14px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Experience headings block (title over company) */
+.exp-headings {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.company-line {
+  color: var(--color-secondary);
+  font-size: 14px;
+  margin-top: 2px;
 }
 
 /* Focus ring utility */
