@@ -101,6 +101,11 @@ export default function App() {
     }
   }
 
+  function getCompanyKey(name) {
+    if (!name) return "";
+    return String(name).split("·")[0].trim();
+  }
+
   const fileBaseName = (siteConfig[lang]?.name || "CV")
     .replace(/[^\w\s-]/g, "")
     .replace(/\s+/g, "_");
@@ -353,10 +358,10 @@ img { max-width: 100%; height: auto; }
                       </div>
                       {r.company && (
                         <div className="contact-item small-muted">
-                          {companyLogos[r.company] ? (
+                          {companyLogos[getCompanyKey(r.company)] ? (
                             <img
                               className="experience-logo"
-                              src={companyLogos[r.company]}
+                              src={companyLogos[getCompanyKey(r.company)]}
                               alt={`${r.company} logo`}
                             />
                           ) : null}
@@ -507,6 +512,43 @@ img { max-width: 100%; height: auto; }
             </div>
           )}
 
+          {/* Core Competencies */}
+          {Array.isArray(t?.competencies) && t.competencies.length > 0 && (
+            <div className="section">
+              <div className="section-title">
+                {t.ui?.competencies ||
+                  (lang === "fr" ? "Compétences clés" : "Core Competencies")}
+              </div>
+              <div className="section-rule" />
+              <div className="grid-2">
+                {(() => {
+                  const items = t.competencies;
+                  const mid = Math.ceil(items.length / 2);
+                  const col1 = items.slice(0, mid);
+                  const col2 = items.slice(mid);
+                  return (
+                    <>
+                      <div className="content-card">
+                        <ul className="list">
+                          {col1.map((s, i) => (
+                            <li key={i}>{s}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="content-card">
+                        <ul className="list">
+                          {col2.map((s, i) => (
+                            <li key={i}>{s}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+          )}
+
           {/* Experience */}
           {Array.isArray(t?.experience) && t.experience.length > 0 && (
             <div className="section">
@@ -518,10 +560,10 @@ img { max-width: 100%; height: auto; }
                 {t.experience.map((exp, i) => (
                   <div className="experience-item" key={i}>
                     <div className="experience-meta">
-                      {companyLogos[exp.company] && (
+                      {companyLogos[getCompanyKey(exp.company)] && (
                         <img
                           className="experience-logo"
-                          src={companyLogos[exp.company]}
+                          src={companyLogos[getCompanyKey(exp.company)]}
                           alt={`${exp.company} logo`}
                         />
                       )}
@@ -532,21 +574,26 @@ img { max-width: 100%; height: auto; }
                       {exp.period && (
                         <span className="period">
                           {exp.period}
-                          {formatDuration(exp.period) ? ` • ${formatDuration(exp.period)}` : ""}
+                          {(() => {
+                            const l = exp.lasting;
+                            const d = formatDuration(exp.period);
+                            const v = l || d;
+                            return v ? ` • ${v}` : "";
+                          })()}
                         </span>
                       )}
                     </div>
+                    {exp.about && (
+                      <p className="muted" style={{ marginTop: 8 }}>
+                        {exp.about}
+                      </p>
+                    )}
                     {Array.isArray(exp.points) && (
                       <ul className="list">
                         {exp.points.map((p, j) => (
                           <li key={j}>{p}</li>
                         ))}
                       </ul>
-                    )}
-                    {exp.about && (
-                      <p className="muted" style={{ marginTop: 8 }}>
-                        {exp.about}
-                      </p>
                     )}
                   </div>
                 ))}
@@ -596,10 +643,10 @@ img { max-width: 100%; height: auto; }
                     {t.otherExperience.map((exp, i) => (
                       <div className="experience-item" key={i}>
                     <div className="experience-meta">
-                      {companyLogos[exp.company] && (
+                      {companyLogos[getCompanyKey(exp.company)] && (
                         <img
                           className="experience-logo"
-                          src={companyLogos[exp.company]}
+                          src={companyLogos[getCompanyKey(exp.company)]}
                           alt={`${exp.company} logo`}
                         />
                       )}
@@ -610,7 +657,12 @@ img { max-width: 100%; height: auto; }
                       {exp.period && (
                         <span className="period">
                           {exp.period}
-                          {formatDuration(exp.period) ? ` • ${formatDuration(exp.period)}` : ""}
+                          {(() => {
+                            const l = exp.lasting;
+                            const d = formatDuration(exp.period);
+                            const v = l || d;
+                            return v ? ` • ${v}` : "";
+                          })()}
                         </span>
                       )}
                     </div>
@@ -629,42 +681,6 @@ img { max-width: 100%; height: auto; }
             </div>
           )}
 
-          {/* Core Competencies */}
-          {Array.isArray(t?.competencies) && t.competencies.length > 0 && (
-            <div className="section">
-              <div className="section-title">
-                {t.ui?.competencies ||
-                  (lang === "fr" ? "Compétences clés" : "Core Competencies")}
-              </div>
-              <div className="section-rule" />
-              <div className="grid-2">
-                {(() => {
-                  const items = t.competencies;
-                  const mid = Math.ceil(items.length / 2);
-                  const col1 = items.slice(0, mid);
-                  const col2 = items.slice(mid);
-                  return (
-                    <>
-                      <div className="content-card">
-                        <ul className="list">
-                          {col1.map((s, i) => (
-                            <li key={i}>{s}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="content-card">
-                        <ul className="list">
-                          {col2.map((s, i) => (
-                            <li key={i}>{s}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </>
-                  );
-                })()}
-              </div>
-            </div>
-          )}
 
           {/* Education */}
           {Array.isArray(t?.education) && t.education.length > 0 && (
