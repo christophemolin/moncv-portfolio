@@ -47,7 +47,7 @@ const siteConfig = {
       other: "Autres expériences",
     },
 
-    name: "Prénom NOM",
+    name: "Heike-Christina FENOT",
     role: "Directrice Pôle Chargés de Comptes",
     location: "Maisons‑Laffitte, France",
     email: "email@yahoo.fr",
@@ -70,7 +70,7 @@ const siteConfig = {
 
     experience: [
       {
-        title: "Directrice Pôle Chargés de Comptes - Client Relationship Department Director",
+        title: "Directrice Pôle Chargés de Comptes",
         company: "TEVEA RF Consulting",
         period: "Janv. 2022 — Aujourd’hui · Paris, Île-de-France (Hybride)",
         points: [
@@ -242,7 +242,7 @@ const siteConfig = {
       other: "Other experiences",
     },
 
-    name: "Prénom NOM",
+    name: "Heike-Christina FENOT",
     role: "Client Relationship Department Director",
     location: "Maisons‑Laffitte, France",
     email: "email@yahoo.fr",
@@ -436,7 +436,7 @@ const siteConfig = {
       other: "Weitere Erfahrungen",
     },
 
-    name: "Prénom NOM",
+    name: "Heike-Christina FENOT",
     role: "Leiterin Kundenbeziehungen — Bereich Key Accounts (Umsatzsteuer)",
     location: "Maisons‑Laffitte, Frankreich",
     email: "email@yahoo.fr",

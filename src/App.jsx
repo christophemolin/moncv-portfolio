@@ -78,6 +78,124 @@ export default function App() {
   const [showOther, setShowOther] = useState(false);
   const t = siteConfig[lang];
 
+  const fileBaseName = (siteConfig[lang]?.name || "CV")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "_");
+
+  function handleExportPDF() {
+    // Uses print styles to produce a clean PDF
+    window.print();
+  }
+
+  async function handleDownloadPDF() {
+    const node = document.querySelector("main");
+    if (!node || !window.html2pdf) return;
+
+    // Apply export layout to preserve ratios and column proportions
+    document.body.classList.add("export-pdf");
+    node.classList.add("export-pdf");
+
+    // Hide toolbar/buttons during capture
+    const toolbars = document.querySelectorAll(".toolbar");
+    const prevDisplays = [];
+    toolbars.forEach((el) => {
+      prevDisplays.push(el.style.display);
+      el.style.display = "none";
+    });
+
+    try {
+      const opt = {
+        filename: `${fileBaseName}.pdf`,
+        // Use millimeters for precise A4 sizing and margins
+        margin: 10, // mm
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+          scrollY: 0,
+          backgroundColor: null
+        },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ["css", "legacy"], avoid: [".content-card", ".experience-item"] },
+      };
+
+      await window.html2pdf().from(node).set(opt).save();
+    } catch (err) {
+      console.error("PDF export failed", err);
+    } finally {
+      // Restore toolbar visibility and remove export layout
+      toolbars.forEach((el, i) => {
+        el.style.display = prevDisplays[i] || "";
+      });
+      document.body.classList.remove("export-pdf");
+      node.classList.remove("export-pdf");
+    }
+  }
+
+  function handleExportWord() {
+    try {
+      const node = document.querySelector("main");
+      if (!node) return;
+      const clone = node.cloneNode(true);
+
+      // Remove toolbar/buttons from export
+      clone.querySelectorAll(".toolbar").forEach((el) => el.remove());
+
+      // Ensure image sources are absolute
+      clone.querySelectorAll("img").forEach((img) => {
+        const src = img.getAttribute("src");
+        if (src) {
+          const abs = new URL(src, document.baseURI).href;
+          img.setAttribute("src", abs);
+        }
+      });
+
+      const styles = `
+body { font-family: Arial, sans-serif; color: #0F172A; }
+h1 { font-size: 28px; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 24px 0 8px; }
+h3 { font-size: 16px; margin: 12px 0 4px; }
+.muted, .small-muted { color: #475569; }
+.list, .bullets { padding-left: 18px; }
+.section-title { text-transform: uppercase; font-size: 14px; letter-spacing: .08em; font-weight: 700; margin: 16px 0 6px; }
+.section-rule { height: 1px; background: #E2E8F0; margin: 8px 0 16px; }
+.experience-item { border-bottom: 1px solid #E2E8F0; padding: 10px 0; }
+.experience-item:last-child { border-bottom: 0; }
+.content-card { border: 1px solid #E2E8F0; padding: 12px; border-radius: 8px; }
+.grid-2 { display: block; }
+img { max-width: 100%; height: auto; }
+      `.trim();
+
+      const html =
+        `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>${document.title}</title>
+<base href="${document.baseURI}">
+<style>${styles}</style>
+</head>
+<body>` +
+        clone.outerHTML +
+        `</body></html>`;
+
+      const blob = new Blob(["\ufeff", html], { type: "application/msword" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${fileBaseName}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 0);
+    } catch (err) {
+      console.error("Word export failed", err);
+    }
+  }
+
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("lang", lang);
@@ -112,6 +230,8 @@ export default function App() {
   // Social icons from public/ (use BASE_URL-safe concatenation to avoid new URL() base error)
   // Hardcode project base for GitHub Pages to avoid missing prefix issues
   const linkedinIcon = "/moncv-portfolio/Linkedin.png";
+  const pdfIcon = "/moncv-portfolio/pdf.png";
+  const wordIcon = "/moncv-portfolio/word.png";
 
   // Company logos from public/ (GitHub Pages project base)
   const logoBase = "/moncv-portfolio/";
@@ -148,6 +268,7 @@ export default function App() {
             </div>
             <div className="small-muted">{t?.role}</div>
           </div>
+          
 
           <div className="divider" />
 
@@ -243,32 +364,99 @@ export default function App() {
           )}
 
           <div className="divider" />
-          <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
-          <ul className="contact-list">
-            {siteConfig.links?.facebook && (
-              <li className="contact-item">
-                <span className="contact-icon" aria-hidden="true">
-                  <Icon name="globe" size={14} />
-                </span>
-                <MetaLink href={siteConfig.links.facebook}>Facebook</MetaLink>
-              </li>
-            )}
+          <div
+            className="toolbar"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 8,
+              marginTop: 8,
+            }}
+          >
             {siteConfig.links?.linkedin && (
-              <li className="contact-item">
-                <span className="contact-icon" aria-hidden="true">
-                  <img src={linkedinIcon} alt="" style={{ width: 16, height: 16, display: "block" }} />
-                </span>
-                <MetaLink href={siteConfig.links.linkedin}>LinkedIn</MetaLink>
-              </li>
+              <a
+                className="focus-ring"
+                href={siteConfig.links.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                style={{
+                  border: "1px solid var(--color-neutral-200)",
+                  background: "#fff",
+                  padding: "6px 10px",
+                  borderRadius: 8,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <img src={linkedinIcon} alt="" style={{ width: 20, height: 20, display: "block" }} />
+              </a>
             )}
-          </ul>
 
-          {/* Hooks for optional extra blocks in the future (references / links) */}
-          {/* <div className="divider" />
-          <h4>{lang === "fr" ? "Références" : "References"}</h4>
-          <ul className="sidebar-list small-muted">
-            <li>—</li>
-          </ul> */}
+            <button
+              type="button"
+              className="focus-ring"
+              onClick={handleDownloadPDF}
+              title={
+                lang === "fr"
+                  ? "Télécharger en PDF"
+                  : lang === "de"
+                  ? "Als PDF herunterladen"
+                  : "Download PDF"
+              }
+              aria-label="Download PDF"
+              style={{
+                border: "1px solid var(--color-neutral-200)",
+                background: "#fff",
+                padding: "6px 10px",
+                borderRadius: 8,
+                cursor: "pointer",
+              }}
+            >
+              <img src={pdfIcon} alt="" style={{ width: 20, height: 20, display: "block" }} />
+            </button>
+
+            <button
+              type="button"
+              className="focus-ring"
+              onClick={handleExportPDF}
+              title={lang === "fr" ? "Imprimer" : lang === "de" ? "Drucken" : "Print"}
+              aria-label="Print"
+              style={{
+                border: "1px solid var(--color-neutral-200)",
+                background: "#fff",
+                padding: "6px 10px",
+                borderRadius: 8,
+                cursor: "pointer",
+              }}
+            >
+              <Icon name="printer" size={20} />
+            </button>
+
+            <button
+              type="button"
+              className="focus-ring"
+              onClick={handleExportWord}
+              title={lang === "fr" ? "Exporter en Word" : lang === "de" ? "Als Word exportieren" : "Export as Word"}
+              aria-label="Export Word"
+              style={{
+                border: "1px solid var(--color-neutral-200)",
+                background: "#fff",
+                padding: "6px 10px",
+                borderRadius: 8,
+                cursor: "pointer",
+              }}
+            >
+              <img src={wordIcon} alt="" style={{ width: 20, height: 20, display: "block" }} />
+            </button>
+          </div>
+          <div className="divider" />
+          <footer className="small-muted" style={{ marginTop: 8, fontSize: 12, textAlign: "center" }}>
+            © {new Date().getFullYear()} {t?.name}. All rights reserved.
+          </footer>
         </aside>
 
         {/* Content (right) */}
@@ -495,11 +683,6 @@ export default function App() {
             </div>
           ) : null}
 
-          <div className="hr" />
-
-          <footer className="muted" style={{ marginTop: 8, fontSize: 14 }}>
-            © {new Date().getFullYear()} {t?.name}. All rights reserved.
-          </footer>
         </section>
       </div>
     </main>

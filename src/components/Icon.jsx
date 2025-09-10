@@ -64,6 +64,46 @@ export default function Icon({ name, size = 16, stroke = "var(--color-primary)" 
           <path d="M9 8h6M9 12h6M9 16h6M7 21V3M17 21V3" />
         </svg>
       );
+    case "pdf":
+      return (
+        <svg {...common} fill="none" stroke="none">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="#DC2626" />
+          <rect x="8" y="8" width="8" height="8" fill="#FFFFFF" />
+          <text
+            x="12"
+            y="16"
+            textAnchor="middle"
+            fill="#DC2626"
+            style={{ fontFamily: "Inter, Arial, sans-serif", fontSize: 8, fontWeight: 700 }}
+          >
+            PDF
+          </text>
+        </svg>
+      );
+    case "word":
+      return (
+        <svg {...common} fill="none" stroke="none">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="#2563EB" />
+          <rect x="8" y="8" width="8" height="8" fill="#FFFFFF" />
+          <text
+            x="12"
+            y="16"
+            textAnchor="middle"
+            fill="#2563EB"
+            style={{ fontFamily: "Inter, Arial, sans-serif", fontSize: 8, fontWeight: 700 }}
+          >
+            DOC
+          </text>
+        </svg>
+      );
+    case "printer":
+      return (
+        <svg {...common}>
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+      );
     default:
       return null;
   }

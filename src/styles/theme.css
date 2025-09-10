@@ -406,6 +406,97 @@ h3 {
   }
 }
 
+/* Export PDF overrides for consistent A4 rendering */
+.export-pdf .container {
+  /* A4 width ~ 794px at 96dpi; leave margins to jsPDF via html2pdf margin option */
+  max-width: 794px;
+  margin: 0 auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.export-pdf .layout {
+  /* Keep sidebar proportionate on A4 and avoid sticky issues */
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.export-pdf .sidebar {
+  position: static !important;
+  top: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 8px !important;
+}
+.export-pdf .content-mobile-offset {
+  margin-top: 0 !important;
+}
+.export-pdf img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+/* Scale avatar token slightly down in export */
+.export-pdf .avatar-token {
+  width: 84px !important;
+  height: 84px !important;
+}
+/* Preserve circular avatar ratio in export */
+.export-pdf .avatar-token img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+/* Additional tightening for export */
+.export-pdf .header-band { padding: 18px; }
+.export-pdf .content-card { padding: 12px; }
+.export-pdf .section { margin-top: 18px; }
+.export-pdf .hr { margin: 14px 0; }
+.export-pdf .bullets { padding-left: 16px; }
+.export-pdf .experience-item { padding: 10px 0; }
+.export-pdf .grid-2 { gap: 12px; }
+
+/* Avoid breaking cards/experience blocks across pages */
+.export-pdf .experience-item,
+.export-pdf .content-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Export PDF type scaling (smaller fonts to fit fewer pages) */
+/* Apply when either body or main has .export-pdf */
+.export-pdf {
+  font-size: 12px;          /* smaller base to reduce page count */
+  line-height: 1.4;
+}
+.export-pdf .small-muted {
+  font-size: 10px;
+}
+.export-pdf h1 {
+  font-size: 28px;
+  line-height: 1.1;
+}
+.export-pdf .header-band h1 {
+  font-size: 34px;          /* keep hero slightly larger for hierarchy */
+  line-height: 1.06;
+}
+.export-pdf h2 {
+  font-size: 17px;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+.export-pdf h3 {
+  font-size: 13px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+.export-pdf .section-title {
+  font-size: 11px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+.export-pdf .list li {
+  margin: 2px 0;            /* tighter list spacing */
+}
+
 /* Print tweaks */
 @media print {
   .toolbar { display: none !important; }

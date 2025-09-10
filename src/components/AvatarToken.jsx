@@ -59,7 +59,7 @@ export default function AvatarToken({
   };
 
   return (
-    <div style={containerStyle} role="img" aria-label={title}>
+    <div className="avatar-token" style={containerStyle} role="img" aria-label={title}>
       <div style={ringStyle} aria-hidden="true" />
       <div style={innerStyle}>
         {resolvedSrc ? (
