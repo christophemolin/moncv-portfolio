@@ -16,16 +16,16 @@ const siteConfig = {
   // Shared references
   references: [
     {
-      name: "Jean Dubois",
-      company: "TEVEA RF Consulting",
-      phone: "03.60.95.52.43",
-      email: "jeandubois@jourrapide.com",
+      name: "Cyrille Konter",
+      company: "Konter Avocat",
+      phone: "06.78.71.20.48",
+      email: "ckr@cyrillekonter-avocat.fr",
     },
     {
-      name: "Sophie Lefèvre",
-      company: "TEVEA RF Consulting",
-      phone: "01.00.53.15.41",
-      email: "sophielefevre@teleworm.us",
+      name: "Patrick Brenelin",
+      company: "TEVEA International",
+      phone: "06.03.01.05.88",
+      email: "patrick.brenelin@tevea.fr",
     },
   ],
 
