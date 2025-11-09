@@ -518,31 +518,21 @@ img { max-width: 100%; height: auto; }
                   (lang === "fr" ? "Compétences clés" : "Core Competencies")}
               </div>
               <div className="section-rule" />
-              <div className="grid-2">
-                {(() => {
-                  const items = t.competencies;
-                  const mid = Math.ceil(items.length / 2);
-                  const col1 = items.slice(0, mid);
-                  const col2 = items.slice(mid);
-                  return (
-                    <>
-                      <div className="content-card">
-                        <ul className="list">
-                          {col1.map((s, i) => (
-                            <li key={i}>{s}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="content-card">
-                        <ul className="list">
-                          {col2.map((s, i) => (
-                            <li key={i}>{s}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </>
-                  );
-                })()}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
+                {t.competencies.map((group, i) => (
+                  <div 
+                    className="content-card" 
+                    key={i}
+                    style={i === t.competencies.length - 1 && t.competencies.length % 2 !== 0 ? { gridColumn: "1 / -1" } : {}}
+                  >
+                    {group.title && <h4 style={{ marginTop: 0, marginBottom: 8, fontSize: 14, fontWeight: 700 }}>{group.title}</h4>}
+                    <ul className="list" style={{ fontSize: 13 }}>
+                      {group.items.map((item, j) => (
+                        <li key={j}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           )}
