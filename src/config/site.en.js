@@ -16,7 +16,7 @@ export default {
     toggleLabel: "Language",
     fr: "FR",
     en: "EN",
-    other: "Other experiences",
+    other: "Community Involvement & Volunteer Work",
   },
 
   name: "Heike-Christina FENOT",
@@ -192,36 +192,31 @@ export default {
 
   otherExperience: [
     {
-      title: "Intern — Financial Engineering",
-      company: "CIC (Crédit Industriel et Commercial)",
-      period: "Apr 2002 — May 2002",
-      lasting: "2 month",
+      title: "Elected Parent Representative",
+      company: "Independent Parents’ Association of Maisons-Laffitte ",
+      period: "Sept. 2017 — present",
+      lasting: "8 years",
       points: [
-        "Prepared materials for M&A; attended financial meetings.",
+        "Active participation in local school life: representing families within schools and educational boards.",
       ],
     },
     {
-      title: "Intern — Hospitality (Front Desk)",
-      company: "IBIS Hotel — Frankfurt (DE)",
-      period: "Jul 2001 — Aug 2001",
-      lasting: "2 month",
+      title: "President of the association",
+      company: "Independent Parents’ Association of Maisons-Laffitte ",
+      period: "Sept. 2018 — Sept. 2022",
+      lasting: "4 years",
       points: [
-        "Welcomed guests, managed stays and departures; reservations planning; satisfaction surveys.",
+        "Teamkoordination, Organisation gemeinsamer Aktionen und Veranstaltungen sowie Kommunikation mit lokalen Behörden.",
       ],
     },
     {
-      title: "Receptionist",
-      company: "Regents Garden",
-      period: "Jul 2000 — Aug 2000",
-      lasting: "2 month",
-      points: ["Front desk operations; reservations planning."],
-    },
-    {
-      title: "Administrative Assistant",
-      company: "B. Braun Medical",
-      period: "Jul 1999",
-      lasting: "1 month",
-      points: ["Various administrative duties."],
+      title: "Active Member",
+      company: "Handicap Prévention Association",
+      period: "",
+      lasting: "",
+      points: [
+        "Regular involvement in bottle cap collection and sorting activities supporting charitable projects, and occasional assistance with other initiatives of the association.",
+      ],
     },
   ],
 
@@ -243,10 +238,9 @@ export default {
     },
   ],
 
-  languages: ["French (native)", "German (fluent)", "English (read, written, spoken)"],
+  languages: ["French (native)", "German (fluent professional proficiency)", "English (fluent professional proficiency)"],
   interests: [
-    "Swimming (leisure)",
+    "Swimming and cycling (leisure)",
     "Cinema, exhibitions, theatre",
-    "Parent association volunteer",
   ],
 };

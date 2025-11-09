@@ -3,7 +3,7 @@ export default {
     profile: "Profil",
     contact: "Kontakt",
     competencies: "Schlüsselkompetenzen",
-    experience: "Erfahrung",
+    experience: "Geschäftserfahrung",
     education: "Ausbildung",
     languages: "Sprachen",
     interests: "Interessen",
@@ -16,7 +16,7 @@ export default {
     toggleLabel: "Sprache",
     fr: "FR",
     en: "EN",
-    other: "Weitere Erfahrungen",
+    other: "Freiwilliges Engagement",
   },
 
   name: "Heike-Christina FENOT",
@@ -192,36 +192,31 @@ export default {
 
   otherExperience: [
     {
-      title: "Praktikum — Corporate Finance",
-      company: "CIC (Crédit Industriel et Commercial)",
-      period: "Apr 2002 — Mai 2002",
-      lasting: "2 Monate",
+      title: "Elternvertreterin",
+      company: "Unabhängigen Elternvereins von Maisons-Laffitte ",
+      period: "Sept. 2017 — heute",
+      lasting: "8 Jahre",
       points: [
-        "Unterlagen für M&A; Teilnahme an Finanzsitzungen.",
+        "Aktive Elternvertretung in Schulen",
       ],
     },
     {
-      title: "Praktikum — Hotellerie (Rezeption)",
-      company: "IBIS Hotel — Frankfurt (DE)",
-      period: "Jul 2001 — Aug 2001",
-      lasting: "2 Monate",
+      title: "Leiterin des Elternvereins",
+      company: "Unabhängigen Elternvereins von Maisons-Laffitte ",
+      period: "Sept. 2018 — Sept. 2022",
+      lasting: "4 Jahre",
       points: [
-        "Empfang, Check‑in/Check‑out; Reservierungsplanung; Zufriedenheitsumfragen.",
+        "Teamkoordination, Organisation gemeinsamer Aktionen und Veranstaltungen sowie Kommunikation mit lokalen Behörden.",
       ],
     },
     {
-      title: "Rezeptionistin",
-      company: "Regents Garden",
-      period: "Jul 2000 — Aug 2000",
-      lasting: "2 Monate",
-      points: ["Empfang, Reservierungsmanagement."],
-    },
-    {
-      title: "Assistenz — Verwaltung",
-      company: "B. Braun Medical",
-      period: "Jul 1999",
-      lasting: "1 Monate",
-      points: ["Verschiedene administrative Aufgaben."],
+      title: "Aktives Mitglied",
+      company: "Verein Handicap Prévention",
+      period: "",
+      lasting: "",
+      points: [
+        "Regelmäßige Mitarbeit bei der Sammlung und Sortierung von Kunststoffverschlüssen zur Unterstützung sozialer Projekte sowie gelegentliche Hilfe bei weiteren Aktivitäten des Vereins.",
+      ],
     },
   ],
 
@@ -243,10 +238,9 @@ export default {
     },
   ],
 
-  languages: ["Französisch (Muttersprache)", "Deutsch (fließend)", "Englisch (lesen, schreiben, sprechen)"],
+  languages: ["Französisch (Muttersprache)", "Deutsch (fließend in Wort und Schrift)", "Englisch (fließend in Wort und Schrift)"],
   interests: [
-    "Schwimmen (Freizeit)",
+    "Schwimmen und Radsport (Freizeit)",
     "Kino, Ausstellungen, Theater",
-    "Eltern‑Vereinsarbeit",
   ],
 };

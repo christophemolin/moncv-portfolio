@@ -16,7 +16,7 @@ export default {
     toggleLabel: "Langue",
     fr: "FR",
     en: "EN",
-    other: "Autres expériences",
+    other: "Engagements associatifs & bénévolat",
   },
 
   name: "Heike-Christina FENOT",
@@ -193,36 +193,31 @@ export default {
 
   otherExperience: [
     {
-      title: "Stage en Ingénierie Financière",
-      company: "Crédit Industriel et Commercial (CIC)",
-      period: "Avr. 2002 — Mai 2002",
-      lasting: "2 mois",
+      title: "Représentante élue des parents d’élèves",
+      company: "Association de Parents Indépendants de Maisons-Laffitte",
+      period: "Sept. 2017 — aujourd’hui",
+      lasting: "8 ans",
       points: [
-        "Supports pour fusions‑acquisitions ; participation à réunions financières.",
+        "Participation active à la vie scolaire locale : représentation des familles auprès des établissements et des instances éducatives.",
       ],
     },
     {
-      title: "Stage en Hôtellerie (Réception)",
-      company: "IBIS Hôtel — Francfort (DE)",
-      period: "Juil. 2001 — Août 2001",
-      lasting: "2 mois",
+      title: "Présidente d’association",
+      company: "Association de Parents Indépendants de Maisons-Laffitte",
+      period: "Sept. 2018 — Sept. 2022",
+      lasting: "4 ans",
       points: [
-        "Accueil, gestion des départs, planning des réservations, questionnaires de satisfaction.",
+        "coordination d’équipe, gestion d’actions collectives, organisation d’événements et communication avec les autorités locales.",
       ],
     },
     {
-      title: "Réceptionniste",
-      company: "Regents Garden",
-      period: "Juil. 2000 — Août 2000",
-      lasting: "2 mois",
-      points: ["Accueil clients, gestion réservations."],
-    },
-    {
-      title: "Assistante Secrétariat",
-      company: "B. Braun Médical",
-      period: "Juil. 1999",
-      lasting: "1 mois",
-      points: ["Tâches administratives diverses."],
+      title: "Membre active",
+      company: "Association Handicap Prévention",
+      period: "",
+      lasting: "",
+      points: [
+        "Participation régulière aux activités de collecte et de tri de bouchons au profit de projets solidaires, et soutien ponctuel aux actions de l’association.",
+      ],
     },
   ],
 
@@ -244,10 +239,9 @@ export default {
     },
   ],
 
-  languages: ["Français (maternelle)", "Allemand (courant)", "Anglais (lu, écrit, parlé)"],
+  languages: ["Français (maternelle)", "Allemand (courant, usage professionnel)", "Anglais (courant, usage professionnel)"],
   interests: [
-    "Natation (loisirs)",
+    "Natation et cyclisme (loisirs)",
     "Cinéma, expositions, théâtre",
-    "Engagement associatif (parents d’élèves)",
   ],
 };
