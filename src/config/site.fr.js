@@ -20,16 +20,15 @@ export default {
   },
 
   name: "Heike-Christina FENOT",
-  role: "Directrice Pôle Chargés de Comptes",
+  role: "Responsable opérations et expérience client",
   location: "Maisons‑Laffitte, France",
-  email: "email@yahoo.fr",
-  phone: "01 23 45 67 89",
-  nationality: "Franco‑allemande",
+  email: "heike_fenot@yahoo.fr",
+  phone: "06 43 33 87 91",
+  nationality: "Franco‑Allemande",
 
   summary: [
-    "15+ ans d’expérience en gestion de comptes clés, coordination de projets et amélioration des processus.",
-    "Animation de rendez‑vous clients, formations et déploiements ; collecte et consolidation d’informations multi‑équipes.",
-    "Développement commercial : propositions, négociations et croissance du portefeuille.",
+    "Solide expérience dans les services B2B et la coordination de projets internationaux, avec une forte orientation clients et qualité opérationnelle.",
+    "Je m’attache à créer des collaborations efficaces entre équipes, partenaires et clients, en conciliant exigence, clarté et sens du service pour garantir des résultats durables.",
   ],
 
   competencies: [

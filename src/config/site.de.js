@@ -20,16 +20,15 @@ export default {
   },
 
   name: "Heike-Christina FENOT",
-  role: "Leiterin Kundenbeziehungen — Bereich Key Accounts (Umsatzsteuer)",
+  role: "Client Operations & Experience Manager",
   location: "Maisons‑Laffitte, Frankreich",
-  email: "email@yahoo.fr",
-  phone: "+33 1 23 45 67 89",
+  email: "heike_fenot@yahoo.fr",
+  phone: "+33 6 43 33 87 91",
   nationality: "Deutsch‑Französisch",
 
   summary: [
-    "15+ Jahre Erfahrung in Key‑Account‑Betreuung, Projektsteuerung und Prozessverbesserung.",
-    "Leitung von Kundenterminen, Schulungen und Rollouts; Sammlung und Konsolidierung teamübergreifender Informationen.",
-    "Business Development: Angebote, Verhandlungen und Ausbau des Kundenportfolios.",
+    "Umfassende Erfahrung im B2B-Dienstleistungssektor und in der internationalen Projektkoordination, mit starkem Fokus auf Kundenbeziehungen und operative Exzellenz.",
+    "Ich lege großen Wert auf eine effiziente Zusammenarbeit zwischen Teams, Partnern und Kunden und verbinde dabei hohe Ansprüche, Klarheit und Serviceorientierung, um nachhaltige Ergebnisse zu erzielen.",
   ],
 
   competencies: [
@@ -42,7 +41,7 @@ export default {
 
   experience: [
     {
-      title: "Leitung Bereich Kundenbeziehungen",
+      title: "Leiterin Kundenbetreuung",
       company: "TEVEA RF Consulting · Paris Frankreich",
       about:
         "Beratung im internationalen Steuerrecht und Umsatzsteuervertretung für ausländische Unternehmen.",

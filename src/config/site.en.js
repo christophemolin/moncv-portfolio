@@ -20,16 +20,15 @@ export default {
   },
 
   name: "Heike-Christina FENOT",
-  role: "Client Relationship Department Director",
+  role: "Client Operations & Experience Manager",
   location: "Maisons‑Laffitte, France",
-  email: "email@yahoo.fr",
-  phone: "+33 1 23 45 67 89",
+  email: "heike_fenot@yahoo.fr",
+  phone: "+33 6 43 33 87 91",
   nationality: "French‑German",
 
   summary: [
-    "15+ years in key account management, project coordination and process improvement.",
-    "Lead client meetings, trainings and deployments; collect and consolidate cross‑team information.",
-    "Business development: proposals, negotiations and portfolio growth.",
+    "Strong experience in B2B services and international project coordination, with a strong focus on client relationships and operational excellence.",
+    "I strive to build effective collaborations between teams, partners, and clients, combining high standards, clarity, and a strong sense of service to achieve lasting results."
   ],
 
   competencies: [
