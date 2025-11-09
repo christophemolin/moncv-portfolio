@@ -73,10 +73,18 @@ function MetaLink({ href, children }) {
   );
 }
 
+// Valid access token - change this to your desired token
+const VALID_TOKEN = "hcf2025";
+
 export default function App() {
   const [lang, setLang] = useState(getInitialLang());
   const [showOther, setShowOther] = useState(false);
   const t = siteConfig[lang];
+
+  // Check for valid token in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('token');
+  const isValidToken = token === VALID_TOKEN;
 
   function formatDuration(periodStr) {
     try {
@@ -269,6 +277,63 @@ img { max-width: 100%; height: auto; }
     "Lowendalmasaï": `${logoBase}ayming_logo.jpeg`,
     "Trelleborg Sealing Solutions France": `${logoBase}trelleborg.jpeg`,
   };
+
+  // If token is invalid, show error page
+  if (!isValidToken) {
+    return (
+      <main className="container" style={{ 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        minHeight: '100vh',
+        padding: '20px',
+        gap: '20px'
+      }}>
+        <LanguageToggle value={lang} onChange={setLang} labels={t?.ui} />
+        <div style={{ 
+          textAlign: 'center', 
+          maxWidth: '500px',
+          padding: '40px',
+          border: '1px solid var(--color-neutral-200)',
+          borderRadius: '12px',
+          background: '#fff',
+          boxShadow: 'var(--shadow-2)'
+        }}>
+          <Icon name="alert-circle" size={64} style={{ color: 'var(--color-error)', marginBottom: '20px' }} />
+          <h1 style={{ 
+            fontSize: '24px', 
+            fontWeight: 700, 
+            marginBottom: '12px',
+            color: 'var(--color-primary)'
+          }}>
+            {lang === "fr" ? "Accès Refusé" : lang === "de" ? "Zugriff Verweigert" : "Access Denied"}
+          </h1>
+          <p style={{ 
+            fontSize: '16px', 
+            color: 'var(--color-neutral-600)',
+            marginBottom: '8px'
+          }}>
+            {lang === "fr" 
+              ? "Un jeton d'accès valide est requis pour consulter ce CV." 
+              : lang === "de"
+              ? "Ein gültiges Zugriffstoken ist erforderlich, um diesen Lebenslauf anzuzeigen."
+              : "A valid access token is required to view this CV."}
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: 'var(--color-neutral-500)'
+          }}>
+            {lang === "fr" 
+              ? "Veuillez vérifier votre lien ou contacter l'administrateur." 
+              : lang === "de"
+              ? "Bitte überprüfen Sie Ihren Link oder kontaktieren Sie den Administrator."
+              : "Please check your link or contact the administrator."}
+          </p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="container">
