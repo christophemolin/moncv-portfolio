@@ -2,7 +2,7 @@ export default {
   ui: {
     profile: "Profil",
     contact: "Kontakt",
-    competencies: "Kernkompetenzen",
+    competencies: "Schlüsselkompetenzen",
     experience: "Erfahrung",
     education: "Ausbildung",
     languages: "Sprachen",
@@ -32,11 +32,51 @@ export default {
   ],
 
   competencies: [
-    "Key‑Account‑Management und Kundenbeziehungen",
-    "Projektgovernance und teamübergreifende Koordination",
-    "Prozessdesign und kontinuierliche Verbesserung (VAT/Mehrwertsteuer)",
-    "Kundenkomitees, Workshops und Schulungen",
-    "Kommerzielle Angebote und Verhandlungen",
+    {
+      title: "Kundenbeziehungen & Service-Exzellenz",
+      items: [
+        "Betreuung von B2B-Schlüsselkunden (Frankreich & International)",
+        "Überwachung der Kundenzufriedenheit und Kundenbindungsprogramme",
+        "Koordination verschiedener Stakeholder (Kunden, Partner, Dienstleister, Steuerbehörden, Banken usw.)",
+        "Klare und proaktive Kommunikation mit multikulturellen Ansprechpartnern",
+      ]
+    },
+    {
+      title: "Koordination & Operatives Management",
+      items: [
+        "Leitung komplexer, internationaler Kundenprojekte",
+        "Organisation, Planung und Überwachung von Serviceprozessen",
+        "Koordination zwischen internen Teams (Kundenservice, Backoffice, Finanzen, IT, Vertrieb)",
+        "Ständige Verbesserung von Arbeitsabläufen und internen Verfahren",
+        "Priorisierung und Problemlösung in anspruchsvollen Umgebungen",
+      ]
+    },
+    {
+      title: "Strategie & Ständige Verbesserung",
+      items: [
+        "Optimierung von Kundenprozessen und internen Abläufen",
+        "Mitwirkung bei der Definition und Umsetzung neuer Service-Strategien",
+        "Beitrag zu Transformationsprojekten (CRM-Migration, digitale Tools, Post-Merger-Integration)",
+        "Change Management und Begleitung der Teams bei der Einführung neuer Tools und Prozesse",
+      ]
+    },
+    {
+      title: "Kommunikation & Zusammenarbeit",
+      items: [
+        "Starke Koordinationsfähigkeit zwischen verschiedenen Abteilungen",
+        "Erstellung von Kunden- und internen Kommunikationsmaterialien (Angebote, Guidelines, Präsentationen)",
+        "Aufmerksame und klare Kommunikation",
+        "Fähigkeit, das Unternehmen gegenüber anspruchsvollen Kunden und Partnern zu repräsentieren",
+      ]
+    },
+    {
+      title: "Internationales Umfeld & Tools",
+      items: [
+        "Zusammenarbeit mit multikulturellen und Internationalen Teams",
+        "Berufliche Sprachkenntnisse in Englisch und Deutsch",
+        "Sicherer Umgang mit Kollaborations- und CRM-Systemen: Salesforce, Youday, KAMMI, Teams, Excel, SharePoint usw.",
+      ]
+    },
   ],
 
   experience: [

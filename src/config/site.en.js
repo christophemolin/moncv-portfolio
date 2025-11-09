@@ -2,7 +2,7 @@ export default {
   ui: {
     profile: "Profile",
     contact: "Contact",
-    competencies: "Core Competencies",
+    competencies: "Key Skills",
     experience: "Experience",
     education: "Education",
     languages: "Languages",
@@ -32,11 +32,51 @@ export default {
   ],
 
   competencies: [
-    "Key account management and client relationships",
-    "Project governance and cross‑team coordination",
-    "Process design and continuous improvement",
-    "Client committees, workshops and training",
-    "Commercial proposals and negotiations",
+    {
+      title: "Client Relations & Service Excellence",
+      items: [
+        "Management of B2B key accounts (France & international)",
+        "Monitoring of client satisfaction and retention programs",
+        "Coordination of multiple stakeholders (clients, partners, service providers, tax authorities, banks, etc.)",
+        "Clear and proactive communication with multicultural counterparts",
+      ]
+    },
+    {
+      title: "Coordination & Operational Management",
+      items: [
+        "Management of complex, international client projects",
+        "Organization, planning, and monitoring of service delivery processes",
+        "Coordination between internal teams (client service, back office, finance, IT, sales)",
+        "Continuous improvement of workflows and internal procedures",
+        "Prioritization and issue resolution in demanding environments",
+      ]
+    },
+    {
+      title: "Strategy & Continuous Improvement",
+      items: [
+        "Optimization of client journeys and internal processes",
+        "Involvement in defining and implementing new service strategies",
+        "Contribution to transformation projects (CRM migration, digital tools, post-acquisition integration)",
+        "Change management and team support during tool and process transitions",
+      ]
+    },
+    {
+      title: "Communication & Collaboration",
+      items: [
+        "Strong ability to connect and align cross-functional teams",
+        "Drafting of client and internal communication materials (offers, guidelines, presentations)",
+        "Attention to detail, clarity, and pedagogy in communication",
+        "Ability to represent the company with high-level clients and partners",
+      ]
+    },
+    {
+      title: "International Environment & Tools",
+      items: [
+        "Collaboration with multicultural and cross-border teams",
+        "Professional proficiency in English and German",
+        "Proficient in collaborative and CRM tools: Salesforce, Youday, KAMMI, Teams, Excel, SharePoint, etc.",
+      ]
+    },
   ],
 
   experience: [

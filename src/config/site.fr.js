@@ -32,11 +32,51 @@ export default {
   ],
 
   competencies: [
-    "Gestion de comptes clés et relation client",
-    "Pilotage de projets et coordination multi‑équipes",
-    "Conception de processus et amélioration continue",
-    "Animation de comités, ateliers et formations",
-    "Rédaction de propositions commerciales",
+    {
+      title: "Relation client & excellence de service",
+      items: [
+        "Gestion de la relation clients grands comptes B2B (France & international)",
+        "Suivi de la satisfaction et fidélisation client",
+        "Coordination multi-interlocuteurs (clients, partenaires, prestataires, autorités fiscales, banques, etc.)",
+        "Communication claire et proactive avec des interlocuteurs multiculturels",
+      ]
+    },
+    {
+      title: "Coordination & gestion opérationnelle",
+      items: [
+        "Pilotage de projets clients complexes à dimension internationale",
+        "Organisation, planification et suivi des process de service",
+        "Coordination entre les équipes internes (service client, back-office, finance, IT, sales)",
+        "Amélioration continue des flux et des procédures internes",
+        "Priorisation et résolution de problèmes en environnement exigeant",
+      ]
+    },
+    {
+      title: "Stratégie & amélioration continue",
+      items: [
+        "Optimisation de parcours clients et des process internes",
+        "Participation à la définition et au déploiement de nouvelles stratégies de service",
+        "Contribution aux projets de transformation (migration CRM, outils digitaux, intégration post-acquisition)",
+        "Gestion du changement et accompagnement des équipes dans les nouveaux outils et procédures",
+      ]
+    },
+    {
+      title: "Communication & collaboration",
+      items: [
+        "Forte aptitude à fédérer et à faire le lien entre services",
+        "Rédaction de supports de communication client et interne (offres, guidelines, présentations)",
+        "Sens du détail, de la pédagogie et de la clarté dans les échanges",
+        "Capacité à représenter l’entreprise auprès de clients et partenaires de haut niveau",
+      ]
+    },
+    {
+      title: "Environnement international & outils",
+      items: [
+        "Collaboration avec des équipes multiculturelles",
+        "Pratique professionnelle de l’anglais et de l’allemand",
+        "Maîtrise d’outils collaboratifs et CRM : Salesforce, Youday, KAMMI, Teams, Excel, SharePoint etc…",
+      ]
+    },
   ],
 
   experience: [
