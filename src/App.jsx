@@ -503,11 +503,9 @@ img { max-width: 100%; height: auto; }
               </div>
               <div className="section-rule" />
               <div className="content-card">
-                <ul className="bullets">
-                  {t.summary.map((line, i) => (
-                    <li key={i}>{line}</li>
-                  ))}
-                </ul>
+                {t.summary.map((line, i) => (
+                  <p key={i} style={{ margin: i > 0 ? '8px 0 0 0' : '0' }}>{line}</p>
+                ))}
               </div>
             </div>
           )}
