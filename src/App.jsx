@@ -263,19 +263,20 @@ img { max-width: 100%; height: auto; }
     ? t.addressLines.join(", ")
     : undefined;
 
-  // Social icons from public/ (use BASE_URL-safe concatenation to avoid new URL() base error)
-  // Hardcode project base for GitHub Pages to avoid missing prefix issues
-  const linkedinIcon = "/moncv-portfolio/Linkedin.png";
-  const pdfIcon = "/moncv-portfolio/pdf.png";
-  const wordIcon = "/moncv-portfolio/word.png";
+  // Get base path from import.meta.env or use root
+  const basePath = import.meta.env.BASE_URL || '/';
+  
+  // Social icons from public/
+  const linkedinIcon = `${basePath}Linkedin.png`;
+  const pdfIcon = `${basePath}pdf.png`;
+  const wordIcon = `${basePath}word.png`;
 
-  // Company logos from public/ (GitHub Pages project base)
-  const logoBase = "/moncv-portfolio/";
+  // Company logos from public/
   const companyLogos = {
-    "TEVEA RF Consulting": `${logoBase}tevearfconsulting_logo.png`,
-    "Directskills": `${logoBase}directskills_logo.jpeg`,
-    "Lowendalmasaï": `${logoBase}ayming_logo.jpeg`,
-    "Trelleborg Sealing Solutions France": `${logoBase}trelleborg.jpeg`,
+    "TEVEA RF Consulting": `${basePath}tevearfconsulting_logo.png`,
+    "Directskills": `${basePath}directskills_logo.jpeg`,
+    "Lowendalmasaï": `${basePath}ayming_logo.jpeg`,
+    "Trelleborg Sealing Solutions France": `${basePath}trelleborg.jpeg`,
   };
 
   // If token is invalid, show error page
