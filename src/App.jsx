@@ -78,7 +78,7 @@ const VALID_TOKEN = "hcf2025";
 
 export default function App() {
   const [lang, setLang] = useState(getInitialLang());
-  const [showOther, setShowOther] = useState(false);
+  const [showOther, setShowOther] = useState(true);
   const t = siteConfig[lang];
 
   // Check for valid token in URL
