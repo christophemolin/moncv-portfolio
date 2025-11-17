@@ -84,14 +84,10 @@ export default {
       title: "Client Relationship Department Director",
       company: "TEVEA RF Consulting · Paris France",
       about:
-        "International tax consulting and VAT representation for foreign companies.",
+        "Leader in indirect taxation supporting companies in managing their tax compliance obligations.",
       period: "Jan 2022 — Present",
       lasting: "3 years",
       points: [
-        "Led the Client Relationship department (people leadership and performance).",
-        "Owned client satisfaction and relationship governance.",
-        "Drove continuous improvement across VAT-related processes.",
-        "Monitored KPIs and delivered action plans."
       ]
     },
     {
@@ -100,11 +96,6 @@ export default {
       period: "Jan 2017 — Dec 2021",
       lasting: "4 years",
       points: [
-        "Managed, animated and grew a client portfolio.",
-        "Implemented Quality KYC and captured client/prospect needs.",
-        "Organized and led client meetings.",
-        "Proposed marketing/commercial actions and improved processes.",
-        "Sold the full VAT services offering."
       ]
     },
     {
@@ -115,14 +106,6 @@ export default {
       period: "Oct 2015 — May 2016",
       lasting: "8 month",
       points: [
-        "Own large French accounts: scoping, follow‑up and client satisfaction.",
-        "Organize and run client meetings (steering, workshops).",
-        "Coordinate and implement client production processes.",
-        "Write and maintain process documentation.",
-        "Collect, consolidate and route information between client and internal teams.",
-        "Identify market needs and relay product/service enhancements.",
-        "Initiate and support new projects (deployments, evolutions).",
-        "Draft and defend commercial proposals; grow the portfolio.",
       ],
     },
     {
@@ -133,12 +116,6 @@ export default {
       period: "Apr 2008 — Oct 2015",
       lasting: "7 years",
       points: [
-        "Manage key accounts in France and abroad, end‑to‑end relationship.",
-        "Lead client meetings; create materials and deliver trainings.",
-        "Coordinate production processes and write procedures.",
-        "Collect, consolidate and share information across teams.",
-        "Launch and participate in new projects.",
-        "Draft, validate and defend proposals; develop the portfolio.",
       ],
     },
     {
@@ -147,8 +124,6 @@ export default {
       period: "Sep 2006 — Mar 2008",
       lasting: "2 years",
       points: [
-        "Prospecting, negotiation and contract signing (CEO, CFO).",
-        "Portfolio development and overall client relationship.",
       ],
     },
     {
@@ -159,8 +134,6 @@ export default {
       period: "Oct 2005 — Jul 2006",
       lasting: "1 year",
       points: [
-        "Global relationship with international clients; order intake.",
-        "Contract setup; purchasing and sales negotiations.",
       ],
     },
     {
@@ -171,8 +144,6 @@ export default {
       period: "Jan 2005 — Jun 2005",
       lasting: "6 month",
       points: [
-        "Targeted prospecting for foreign VAT recovery.",
-        "Built customer database, mailings; managed FR/DE client relations.",
       ],
     },
     {
@@ -183,9 +154,6 @@ export default {
       period: "2002 — 2004",
       lasting: "2 years",
       points: [
-        "Organized events and trade fairs; press kits.",
-        "Managed ad placements and measured impact.",
-        "Client relationship and order intake.",
       ],
     }
   ],

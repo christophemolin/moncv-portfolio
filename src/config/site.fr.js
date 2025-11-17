@@ -84,14 +84,10 @@ export default {
       title: "Directrice Pôle Chargés de Comptes",
       company: "TEVEA RF Consulting · Paris France",
       about:
-        "Conseil en fiscalité internationale et représentation TVA pour entreprises étrangères.",
+        "Leader en fiscalité indirecte, accompagnant les entreprises dans la gestion de leurs obligations de conformité fiscale.",
       period: "Janv. 2022 — Aujourd’hui",
       lasting: "3 ans",
       points: [
-        "Direction du pôle Chargés de Comptes (management et performance).",
-        "Pilotage de la relation client et de la satisfaction.",
-        "Amélioration continue des processus et coordination transverse (TVA).",
-        "Suivi d’indicateurs (KPI) et plan d’actions."
       ]
     },
     {
@@ -100,11 +96,6 @@ export default {
       period: "Janv. 2017 — Déc. 2021",
       lasting: "4 ans",
       points: [
-        "Gestion / Animation / Développement d’un portefeuille clients.",
-        "Mise en œuvre d’un KYC Qualité et formalisation des besoins.",
-        "Organisation et animation des RDV clients.",
-        "Propositions marketing/commerciales et amélioration des processus.",
-        "Commercialisation des services de l’offre TVA."
       ]
     },
     {
@@ -115,14 +106,6 @@ export default {
       period: "Oct. 2015 — Mai 2016",
       lasting: "8 mois",
       points: [
-        "Management de grands comptes français : cadrage, suivi, satisfaction.",
-        "Organisation et animation des rendez‑vous clients (comités, ateliers).",
-        "Coordination et mise en place des processus de production côté client.",
-        "Rédaction et maintien de la documentation/processus.",
-        "Collecte, consolidation et transmission d’informations entre clients et équipes internes.",
-        "Identification des besoins marché, remontée d’évolutions produit et services.",
-        "Participation et lancement de nouveaux projets (déploiements, évolutions).",
-        "Rédaction et défense de propositions commerciales ; développement du portefeuille.",
       ],
     },
     {
@@ -133,13 +116,6 @@ export default {
       period: "Avr. 2008 — Oct. 2015",
       lasting: "7 ans",
       points: [
-        "Gestion de comptes clés France/international, relation globale.",
-        "Animation des RDV clients, création de supports et animation de formations.",
-        "Coordination des processus de production et rédaction de procédures.",
-        "Collecte, consolidation et transmission d’informations.",
-        "Initialisation et participation à de nouveaux projets.",
-        "Rédaction, validation et défense de propositions commerciales.",
-        "Développement du portefeuille.",
       ],
     },
     {
@@ -148,8 +124,6 @@ export default {
       period: "Sept. 2006 — Mars 2008",
       lasting: "2 ans",
       points: [
-        "Prospection, négociation et signature de contrats (DG, DAF).",
-        "Développement du portefeuille et gestion de la relation globale.",
       ],
     },
     {
@@ -160,8 +134,6 @@ export default {
       period: "Oct. 2005 — Juil. 2006",
       lasting: "1 an",
       points: [
-        "Gestion de la relation clients internationaux, prise de commandes.",
-        "Mise en place de contrats, négociation achats‑ventes.",
       ],
     },
     {
@@ -172,8 +144,6 @@ export default {
       period: "Janv. 2005 — Juin 2005",
       lasting: "6 mois",
       points: [
-        "Prospection ciblée pour récupération de TVA étrangère.",
-        "Création base clients, mailings, gestion relation clients DE/FR.",
       ],
     },
     {
@@ -184,9 +154,6 @@ export default {
       period: "2002 — 2004",
       lasting: "2 ans",
       points: [
-        "Organisation d’événements et salons, dossiers de presse.",
-        "Gestion placements publicitaires et mesure d’impact.",
-        "Relation client et prise de commandes.",
       ],
     }
   ],

@@ -84,14 +84,10 @@ export default {
       title: "Leiterin Kundenbetreuung",
       company: "TEVEA RF Consulting · Paris Frankreich",
       about:
-        "Beratung im internationalen Steuerrecht und Umsatzsteuervertretung für ausländische Unternehmen.",
+        "Führend im Bereich der indirekten Steuern und Begleiter von Unternehmen bei der Erfüllung ihrer steuerlichen Pflichten.",
       period: "Jan 2022 — Heute",
       lasting: "3 Jahre",
       points: [
-        "Führung des Bereichs Kundenbeziehungen (People Leadership, Performance).",
-        "Verantwortung für Kundenzufriedenheit und Relationship‑Governance.",
-        "Kontinuierliche Verbesserung von VAT‑bezogenen Prozessen.",
-        "Überwachung von KPIs und Umsetzung von Maßnahmenplänen."
       ]
     },
     {
@@ -100,11 +96,6 @@ export default {
       period: "Jan 2017 — Dez 2021",
       lasting: "4 Jahre",
       points: [
-        "Betreuung, Entwicklung und Ausbau eines Kundenportfolios.",
-        "Einführung eines Qualitäts‑KYC und Erfassung von Kundenbedürfnissen.",
-        "Organisation und Moderation von Kundenterminen.",
-        "Vorschläge für Marketing/Vertrieb und Prozessverbesserungen.",
-        "Vertrieb des kompletten VAT‑Leistungsangebots."
       ]
     },
     {
@@ -115,14 +106,6 @@ export default {
       period: "Okt 2015 — Mai 2016",
       lasting: "8 Monate",
       points: [
-        "Verantwortung für Großkunden in Frankreich: Scoping, Follow‑up, Zufriedenheit.",
-        "Organisation und Durchführung von Kundenterminen (Steering, Workshops).",
-        "Koordination und Implementierung von Kundenprozessen.",
-        "Dokumentation und Pflege von Prozessunterlagen.",
-        "Sammlung/Konsolidierung von Informationen zwischen Kunde und internen Teams.",
-        "Identifikation von Marktbedürfnissen; Feedback zu Produkt/Service‑Weiterentwicklungen.",
-        "Initiierung und Begleitung neuer Projekte (Rollouts, Weiterentwicklungen).",
-        "Erstellung und Verteidigung von Angeboten; Portfoliowachstum.",
       ],
     },
     {
@@ -133,12 +116,6 @@ export default {
       period: "Apr 2008 — Okt 2015",
       lasting: "7 Jahre",
       points: [
-        "Betreuung von Schlüsselkunden in Frankreich und international (End‑to‑End‑Beziehung).",
-        "Leitung von Kundenterminen; Erstellung von Unterlagen und Durchführung von Schulungen.",
-        "Koordination von Produktionsprozessen und Erstellung von Verfahren.",
-        "Sammlung, Konsolidierung und Weitergabe von Informationen über Teams hinweg.",
-        "Start und Mitarbeit an neuen Projekten.",
-        "Ausarbeitung, Validierung und Verteidigung von Angeboten; Portfolioausbau.",
       ],
     },
     {
@@ -147,8 +124,6 @@ export default {
       period: "Sep 2006 — Mär 2008",
       lasting: "2 Jahre",
       points: [
-        "Akquise, Verhandlung und Vertragsabschluss (CEO, CFO).",
-        "Portfolioentwicklung und ganzheitliche Kundenbeziehung.",
       ],
     },
     {
@@ -159,8 +134,6 @@ export default {
       period: "Okt 2005 — Jul 2006",
       lasting: "1 Jahr",
       points: [
-        "Internationale Kundenbetreuung; Auftragserfassung.",
-        "Vertragsgestaltung; Einkaufs‑ und Verkaufsverhandlungen.",
       ],
     },
     {
@@ -171,21 +144,16 @@ export default {
       period: "Jan 2005 — Jun 2005",
       lasting: "6 Monate",
       points: [
-        "Gezielte Ansprache zur Rückforderung ausländischer Mehrwertsteuer.",
-        "Aufbau Kundendatenbank, Mailings; Betreuung DE/FR‑Kundenbeziehungen.",
       ],
     },
     {
       title: "Marketing & Sales Assistant",
       company: "Croso France · Paris Frankreich",
       about:
-        "Lieferant von Handläufen, Stadtmobiliar und Leitsystemen für öffentliche und gewerbliche Räume.",
+        "Lieferant von Handläufen, Stadtmobiliar und Leitsystemen für öffentliche und professionnelle Bereiche.",
       period: "2002 — 2004",
       lasting: "2 Jahre",
       points: [
-        "Organisation von Events und Messen; Pressemappen.",
-        "Schaltung von Anzeigen und Messung der Wirkung.",
-        "Kundenbetreuung und Auftragserfassung.",
       ],
     }
   ],

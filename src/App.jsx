@@ -663,7 +663,7 @@ img { max-width: 100%; height: auto; }
               </div>
               <div className="section-rule" />
               <div className="content-card">
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                {/* <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <div className="muted">
                     {showOther
                       ? lang === "fr" ? "Réduire" : "Collapse"
@@ -691,9 +691,9 @@ img { max-width: 100%; height: auto; }
                   >
                     {showOther ? "−" : "+"}
                   </button>
-                </div>
+                </div> */}
                 {showOther && (
-                  <div id="other-exp" style={{ marginTop: 12 }}>
+                  <div id="other-exp" style={{ marginTop: 8 }}>
                     {t.otherExperience.map((exp, i) => (
                       <div className="experience-item" key={i}>
                     <div className="experience-meta">
