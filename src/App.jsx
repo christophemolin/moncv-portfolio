@@ -402,7 +402,7 @@ img { max-width: 100%; height: auto; }
                   <Icon name="flag" size={14} />
                 </span>
                 <span>
-                  {lang === "fr" ? "Nationalité: " : "Nationality: "}
+                  {lang === "fr" ? "Nationalité: " : lang === "en" ? "Nationality: " : " Nationalität: "}
                   {t.nationality}
                 </span>
               </li>
@@ -412,7 +412,7 @@ img { max-width: 100%; height: auto; }
           {Array.isArray(siteConfig.references) && siteConfig.references.length > 0 && (
             <>
               <div className="divider" />
-              <h4>{lang === "fr" ? "Références" : "References"}</h4>
+              <h4>{lang === "fr" ? "Références" : lang === "en" ? "References" : "Referenzen"}</h4>
               <ul className="contact-list references-list">
                 {siteConfig.references.map((r, i) => {
                   const tel = r.phone ? `tel:${r.phone.replace(/\s+/g, "")}` : undefined;

@@ -23,7 +23,7 @@ export default {
   role: "Responsable opérations et expérience client",
   location: "Maisons‑Laffitte, France",
   email: "heike_fenot@yahoo.fr",
-  phone: "06 43 33 87 91",
+  phone: "+33 6 43 33 87 91",
   nationality: "Franco‑Allemande",
 
   summary: [

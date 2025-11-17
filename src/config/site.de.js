@@ -4,7 +4,7 @@ export default {
     contact: "Kontakt",
     competencies: "Schlüsselkompetenzen",
     experience: "Geschäftserfahrung",
-    education: "Ausbildung",
+    education: "Ausbildungen",
     languages: "Sprachen",
     interests: "Interessen",
     website: "Webseite",

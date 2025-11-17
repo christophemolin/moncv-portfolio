@@ -18,13 +18,13 @@ const siteConfig = {
     {
       name: "Cyrille Konter",
       company: "Konter Avocat",
-      phone: "06.78.71.20.48",
+      phone: "+33 6 78 71 20 48",
       email: "ckr@cyrillekonter-avocat.fr",
     },
     {
       name: "Patrick Brenelin",
       company: "TEVEA International",
-      phone: "06.03.01.05.88",
+      phone: "+33 6 03 01 05 88",
       email: "patrick.brenelin@tevea.fr",
     },
   ],
