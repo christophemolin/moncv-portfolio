@@ -189,6 +189,18 @@ h3 {
   }
 }
 
+/* Competencies grid: 2 columns on desktop/tablet, 1 column on mobile */
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .competencies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hr {
   height: 1px;
   background: var(--color-neutral-200);
