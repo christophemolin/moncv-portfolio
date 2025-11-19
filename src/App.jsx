@@ -584,7 +584,7 @@ img { max-width: 100%; height: auto; }
                   (lang === "fr" ? "Compétences clés" : "Core Competencies")}
               </div>
               <div className="section-rule" />
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
+              <div className="competencies-grid">
                 {t.competencies.map((group, i) => (
                   <div 
                     className="content-card" 
