@@ -241,6 +241,10 @@ h3 {
   flex-direction: column;
   min-width: 0;
 }
+/* Reduce the top spacing of the main title inside experience headings */
+.exp-headings h3 {
+  margin-top: 0;
+}
 .company-line {
   color: var(--color-secondary);
   font-size: 14px;
@@ -372,6 +376,16 @@ h3 {
   box-shadow: var(--shadow-1);
 }
 
+/* Consistent vertical spacing between experience cards, similar to COMPÉTENCES and FORMATIONS */
+.section .experience-item.content-card + .experience-item.content-card {
+  margin-top: 12px;
+}
+
+/* Same spacing between entries inside ENGAGEMENTS ASSOCIATIFS & BÉNÉVOLAT */
+#other-exp .experience-item + .experience-item {
+  margin-top: 12px;
+}
+
 /* Bullet lists */
 .bullets {
   padding-left: 18px;
@@ -441,8 +455,8 @@ h3 {
   padding-right: 8px;
 }
 .export-pdf .layout {
-  /* Keep sidebar proportionate on A4 and avoid sticky issues */
-  grid-template-columns: 200px 1fr;
+  /* Full width layout: sidebar above content */
+  grid-template-columns: 1fr;
   gap: 12px;
   align-items: start;
 }
@@ -452,6 +466,13 @@ h3 {
   max-height: none !important;
   overflow: visible !important;
   padding: 8px !important;
+  padding-top: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.export-pdf .sidebar > div:nth-child(2) {
+  margin-top: 0 !important; /* Remove margin above name block */
 }
 .export-pdf .content-mobile-offset {
   margin-top: 0 !important;
@@ -460,32 +481,74 @@ h3 {
   max-width: 100% !important;
   height: auto !important;
 }
-/* Scale avatar token slightly down in export */
+
+/* Hide elements in PDF export */
 .export-pdf .avatar-token {
-  width: 84px !important;
-  height: 84px !important;
+  display: none !important;
 }
-/* Preserve circular avatar ratio in export */
-.export-pdf .avatar-token img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+.export-pdf .lang-toggle {
+  display: none !important;
+}
+.export-pdf .toolbar {
+  display: none !important;
+}
+.export-pdf .sidebar footer {
+  display: none !important;
+}
+.export-pdf .sidebar > div:first-child {
+  display: none !important; /* Hide avatar container */
+}
+.export-pdf .header-band {
+  display: none !important; /* Hide header band with name and role */
+}
+.export-pdf .sidebar .divider:last-of-type {
+  display: none !important; /* Hide divider above footer */
+}
+.export-pdf .section-rule {
+  display: none !important; /* Hide dividers below section titles */
+}
+
+/* 3-column layout for contact and references in PDF */
+.export-pdf .sidebar-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+.export-pdf .contact-section {
+  grid-column: 1;
+}
+.export-pdf .references-section {
+  grid-column: 2;
+}
+
+/* Make references display in 2 columns side by side */
+.export-pdf .references-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.export-pdf .references-list li {
+  margin: 0 !important;
+}
+.export-pdf .references-list li + li {
+  margin-top: 0 !important;
 }
 /* Additional tightening for export */
 .export-pdf .header-band { padding: 18px; }
 .export-pdf .content-card { padding: 12px; }
-.export-pdf .section { margin-top: 18px; }
+.export-pdf .section { 
+  margin-top: 8px;
+}
+.export-pdf .section:first-of-type { margin-top: 0; } /* Remove top margin from first section (PROFIL) */
 .export-pdf .hr { margin: 14px 0; }
 .export-pdf .bullets { padding-left: 16px; }
-.export-pdf .experience-item { padding: 10px 0; }
+.export-pdf .experience-item { padding: 6px 0; }
+.export-pdf .experience-item:first-child { padding-top: 0; }
 .export-pdf .grid-2 { gap: 12px; }
-
-/* Avoid breaking cards/experience blocks across pages */
-.export-pdf .experience-item,
-.export-pdf .content-card {
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
+.export-pdf .sidebar .divider { margin: 4px 0; } /* Reduce divider margins in sidebar */
+.export-pdf .sidebar .divider:first-of-type { margin-top: 2px; margin-bottom: 4px; } /* Reduce space after first divider */
+.export-pdf .sidebar-content-wrapper { margin-top: 4px; } /* Reduce space before COORDONNÉES */
+.export-pdf .layout { gap: 6px; } /* Reduce gap between sidebar and content */
 
 /* Export PDF type scaling (smaller fonts to fit fewer pages) */
 /* Apply when either body or main has .export-pdf */
@@ -514,13 +577,107 @@ h3 {
   margin-top: 6px;
   margin-bottom: 4px;
 }
+/* Tighten heading inside experience header for PDF as well */
+.export-pdf .exp-headings h3 {
+  margin-top: 0;
+}
 .export-pdf .section-title {
   font-size: 11px;
-  margin-top: 16px;
+  margin-top: 6px;
   margin-bottom: 6px;
 }
 .export-pdf .list li {
   margin: 2px 0;            /* tighter list spacing */
+}
+
+/* Reduce font size by 1pt for COMPÉTENCES block and all sections below it */
+.export-pdf .section:nth-of-type(2) .section-title,
+.export-pdf .section:nth-of-type(n+2) .section-title {
+  font-size: 10px; /* 11px - 1pt */
+}
+.export-pdf .section:nth-of-type(2),
+.export-pdf .section:nth-of-type(n+2) {
+  font-size: 11px; /* 12px - 1pt */
+}
+.export-pdf .section:nth-of-type(2) h3,
+.export-pdf .section:nth-of-type(n+2) h3 {
+  font-size: 12px; /* 13px - 1pt */
+}
+.export-pdf .section:nth-of-type(2) h4,
+.export-pdf .section:nth-of-type(n+2) h4 {
+  font-size: 12px; /* 13px - 1pt */
+}
+.export-pdf .section:nth-of-type(2) .list,
+.export-pdf .section:nth-of-type(n+2) .list {
+  font-size: 11px; /* 12px - 1pt */
+}
+
+/* Additional reduction for COMPÉTENCES block only (2nd section) */
+.export-pdf .section:nth-of-type(2) .section-title {
+  font-size: 10px; /* Keep section title normal */
+}
+.export-pdf .section:nth-of-type(2) {
+  font-size: 11px; /* Keep base font normal */
+}
+
+/* Target competencies-grid specifically */
+.export-pdf .competencies-grid h4 {
+  font-size: 10px !important; /* h4 headings in competencies */
+  margin-bottom: 4px !important;
+}
+.export-pdf .competencies-grid .list {
+  font-size: 9px !important; /* list items in competencies */
+  margin-top: 4px !important;
+}
+.export-pdf .competencies-grid .content-card {
+  padding: 6px !important; /* Reduce padding in competencies cards */
+}
+.export-pdf .competencies-grid {
+  gap: 8px; /* Reduce gap between cards */
+}
+
+/* Page break control for PDF export */
+.export-pdf .experience-item,
+.export-pdf .competencies-grid > div {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.export-pdf .section,
+.export-pdf .content-card {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+.export-pdf .section {
+  page-break-after: auto;
+  break-after: auto;
+  page-break-before: auto;
+  break-before: auto;
+}
+
+/* Prevent orphaned section titles */
+.export-pdf .section-title {
+  page-break-after: avoid;
+  break-after: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Keep experience items together */
+.export-pdf .experience-item {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 0;
+}
+
+/* Remove extra spacing that could cause gaps */
+.export-pdf .section:last-child {
+  margin-bottom: 0;
+}
+
+.export-pdf .content-card:last-child {
+  margin-bottom: 0;
 }
 
 /* Print tweaks */
@@ -532,4 +689,22 @@ h3 {
   .header-band { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { color: inherit; text-decoration: none; }
   .focus-ring:focus-visible { outline: none; }
+  
+  /* Page break control for print */
+  .experience-item,
+  .competencies-grid > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .section,
+  .content-card {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  
+  .section-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
 }

@@ -153,7 +153,8 @@ export default function App() {
           backgroundColor: null
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-        pagebreak: { mode: ["css", "legacy"], avoid: [".content-card", ".experience-item"] },
+        // Keep only critical elements unbreakable to reduce big gaps
+        pagebreak: { mode: ["css", "legacy"], avoid: [".section-title"] },
       };
 
       await window.html2pdf().from(node).set(opt).save();
@@ -339,8 +340,6 @@ export default function App() {
 
   return (
     <main className="container">
-      {/* Toolbar moved next to avatar in the sidebar */}
-
       {/* Two-column layout */}
       <div className="layout">
         {/* Sidebar (left) */}
@@ -367,8 +366,10 @@ export default function App() {
 
           <div className="divider" />
 
-          <h4>{t?.ui?.contact || (lang === "fr" ? "Coordonnées" : "Contact")}</h4>
-          <ul className="contact-list">
+          <div className="sidebar-content-wrapper">
+            <div className="contact-section">
+              <h4>{t?.ui?.contact || (lang === "fr" ? "Coordonnées" : "Contact")}</h4>
+              <ul className="contact-list">
             {t?.phone && (
               <li className="contact-item">
                 <span className="contact-icon" aria-hidden="true">
@@ -397,66 +398,67 @@ export default function App() {
                 </span>
               </li>
             )}
-            {t?.nationality && (
-              <li className="contact-item small-muted">
-                <span className="contact-icon" aria-hidden="true">
-                  <Icon name="flag" size={14} />
-                </span>
-                <span>
-                  {lang === "fr" ? "Nationalité: " : lang === "en" ? "Nationality: " : " Nationalität: "}
-                  {t.nationality}
-                </span>
-              </li>
-            )}
-          </ul>
-
-          {Array.isArray(siteConfig.references) && siteConfig.references.length > 0 && (
-            <>
-              <div className="divider" />
-              <h4>{lang === "fr" ? "Références" : lang === "en" ? "References" : "Referenzen"}</h4>
-              <ul className="contact-list references-list">
-                {siteConfig.references.map((r, i) => {
-                  const tel = r.phone ? `tel:${r.phone.replace(/\s+/g, "")}` : undefined;
-                  const mail = r.email ? `mailto:${r.email}` : undefined;
-                  return (
-                    <li key={i}>
-                      <div className="contact-item">
-                        <strong>{r.name}</strong>
-                      </div>
-                      {r.company && (
-                        <div className="contact-item small-muted">
-                          {companyLogos[getCompanyKey(r.company)] ? (
-                            <img
-                              className="experience-logo"
-                              src={companyLogos[getCompanyKey(r.company)]}
-                              alt={`${r.company} logo`}
-                            />
-                          ) : null}
-                          <span>{r.company}</span>
-                        </div>
-                      )}
-                      {r.phone && (
-                        <div className="contact-item">
-                          <span className="contact-icon" aria-hidden="true">
-                            <Icon name="phone" size={14} />
-                          </span>
-                          <MetaLink href={tel}>{r.phone}</MetaLink>
-                        </div>
-                      )}
-                      {r.email && (
-                        <div className="contact-item">
-                          <span className="contact-icon" aria-hidden="true">
-                            <Icon name="mail" size={14} />
-                          </span>
-                          <MetaLink href={mail}>{r.email}</MetaLink>
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
+                {t?.nationality && (
+                  <li className="contact-item small-muted">
+                    <span className="contact-icon" aria-hidden="true">
+                      <Icon name="flag" size={14} />
+                    </span>
+                    <span>
+                      {lang === "fr" ? "Nationalité: " : lang === "en" ? "Nationality: " : " Nationalität: "}
+                      {t.nationality}
+                    </span>
+                  </li>
+                )}
               </ul>
-            </>
-          )}
+            </div>
+
+            {Array.isArray(siteConfig.references) && siteConfig.references.length > 0 && (
+              <div className="references-section">
+                <h4>{lang === "fr" ? "Références" : lang === "en" ? "References" : "Referenzen"}</h4>
+                <ul className="contact-list references-list">
+                  {siteConfig.references.map((r, i) => {
+                    const tel = r.phone ? `tel:${r.phone.replace(/\s+/g, "")}` : undefined;
+                    const mail = r.email ? `mailto:${r.email}` : undefined;
+                    return (
+                      <li key={i}>
+                        <div className="contact-item">
+                          <strong>{r.name}</strong>
+                        </div>
+                        {r.company && (
+                          <div className="contact-item small-muted">
+                            {companyLogos[getCompanyKey(r.company)] ? (
+                              <img
+                                className="experience-logo"
+                                src={companyLogos[getCompanyKey(r.company)]}
+                                alt={`${r.company} logo`}
+                              />
+                            ) : null}
+                            <span>{r.company}</span>
+                          </div>
+                        )}
+                        {r.phone && (
+                          <div className="contact-item">
+                            <span className="contact-icon" aria-hidden="true">
+                              <Icon name="phone" size={14} />
+                            </span>
+                            <MetaLink href={tel}>{r.phone}</MetaLink>
+                          </div>
+                        )}
+                        {r.email && (
+                          <div className="contact-item">
+                            <span className="contact-icon" aria-hidden="true">
+                              <Icon name="mail" size={14} />
+                            </span>
+                            <MetaLink href={mail}>{r.email}</MetaLink>
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+          </div>
 
           <div className="divider" />
           <div
@@ -607,14 +609,13 @@ export default function App() {
 
           {/* Experience */}
           {Array.isArray(t?.experience) && t.experience.length > 0 && (
-            <div className="section">
+            <div className="section ">
               <div className="section-title">
                 {t.ui?.experience || (lang === "fr" ? "Expérience" : "Experience")}
               </div>
               <div className="section-rule" />
-              <div className="content-card">
                 {t.experience.map((exp, i) => (
-                  <div className="experience-item" key={i}>
+                  <div className="experience-item content-card" key={i}>
                     <div className="experience-meta">
                       {companyLogos[getCompanyKey(exp.company)] && (
                         <img
@@ -644,16 +645,15 @@ export default function App() {
                         {exp.about}
                       </p>
                     )}
-                    {Array.isArray(exp.points) && (
+                    {/* {Array.isArray(exp.points) && (
                       <ul className="list">
                         {exp.points.map((p, j) => (
                           <li key={j}>{p}</li>
                         ))}
                       </ul>
-                    )}
+                    )} */}
                   </div>
                 ))}
-              </div>
             </div>
           )}
 
@@ -664,40 +664,10 @@ export default function App() {
                 {t.ui?.other || (lang === "fr" ? "Autres expériences" : "Other experiences")}
               </div>
               <div className="section-rule" />
-              <div className="content-card">
-                {/* <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <div className="muted">
-                    {showOther
-                      ? lang === "fr" ? "Réduire" : "Collapse"
-                      : lang === "fr" ? "Déployer" : "Expand"}
-                  </div>
-                  <button
-                    type="button"
-                    className="focus-ring"
-                    aria-expanded={showOther ? "true" : "false"}
-                    aria-controls="other-exp"
-                    onClick={() => setShowOther((v) => !v)}
-                    style={{
-                      border: "1px solid var(--color-neutral-200)",
-                      borderRadius: 8,
-                      background: "#fff",
-                      padding: "2px 10px",
-                      fontWeight: 700,
-                      cursor: "pointer",
-                    }}
-                    title={
-                      showOther
-                        ? (lang === "fr" ? "Réduire" : "Collapse")
-                        : (lang === "fr" ? "Déployer" : "Expand")
-                    }
-                  >
-                    {showOther ? "−" : "+"}
-                  </button>
-                </div> */}
                 {showOther && (
                   <div id="other-exp" style={{ marginTop: 8 }}>
                     {t.otherExperience.map((exp, i) => (
-                      <div className="experience-item" key={i}>
+                      <div className="experience-item content-card" key={i}>
                     <div className="experience-meta">
                       {companyLogos[getCompanyKey(exp.company)] && (
                         <img
@@ -733,7 +703,6 @@ export default function App() {
                     ))}
                   </div>
                 )}
-              </div>
             </div>
           )}
 
