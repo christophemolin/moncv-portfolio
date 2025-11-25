@@ -85,6 +85,9 @@ export default function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
   const isValidToken = token === VALID_TOKEN;
+  
+  // Check for PDF preview mode
+  const isPdfPreview = urlParams.get('pdf') === 'true';
 
   function formatDuration(periodStr) {
     try {
@@ -240,6 +243,32 @@ export default function App() {
     }
   }, [lang]);
 
+  // Apply PDF preview styles when pdf=true is in URL
+  useEffect(() => {
+    if (isPdfPreview) {
+      document.body.classList.add("export-pdf");
+      const mainElement = document.querySelector("main");
+      if (mainElement) {
+        mainElement.classList.add("export-pdf");
+      }
+    } else {
+      document.body.classList.remove("export-pdf");
+      const mainElement = document.querySelector("main");
+      if (mainElement) {
+        mainElement.classList.remove("export-pdf");
+      }
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove("export-pdf");
+      const mainElement = document.querySelector("main");
+      if (mainElement) {
+        mainElement.classList.remove("export-pdf");
+      }
+    };
+  }, [isPdfPreview]);
+
   // Sync document title and meta description
   useEffect(() => {
     const name = siteConfig[lang]?.name;
@@ -356,13 +385,12 @@ export default function App() {
             <LanguageToggle value={lang} onChange={setLang} labels={t?.ui} />
           </div>
 
-          <div style={{ textAlign: "center", marginTop: 8 }}>
+          <div className="header-band" style={{ textAlign: "center", marginTop: 8 }}>
             <div style={{ fontFamily: "var(--font-title)", fontWeight: 800, fontSize: 18 }}>
               {t?.name}
             </div>
             <div className="small-muted">{t?.role}</div>
           </div>
-          
 
           <div className="divider" />
 
@@ -614,9 +642,15 @@ export default function App() {
                 {t.ui?.experience || (lang === "fr" ? "Expérience" : "Experience")}
               </div>
               <div className="section-rule" />
-                {t.experience.map((exp, i) => (
-                  <div className="experience-item content-card" key={i}>
-                    <div className="experience-meta">
+                {t.experience.map((exp, i) => {
+                  // Insert page break before the 4th item (index 3)
+                  const needsPageBreak = i === 3;
+                  
+                  return (
+                    <>
+                      {needsPageBreak && <div className="html2pdf__page-break" style={{ height: 0, margin: 0, padding: 0 }} />}
+                      <div className="experience-item content-card" key={i}>
+                        <div className="experience-meta">
                       {companyLogos[getCompanyKey(exp.company)] && (
                         <img
                           className="experience-logo"
@@ -652,8 +686,10 @@ export default function App() {
                         ))}
                       </ul>
                     )} */}
-                  </div>
-                ))}
+                      </div>
+                    </>
+                  );
+                })}
             </div>
           )}
 

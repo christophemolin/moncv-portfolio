@@ -351,6 +351,20 @@ h3 {
   font-weight: 600;
 }
 
+/* Reset header-band styling in sidebar for normal view */
+.sidebar .header-band {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  box-shadow: none;
+}
+.sidebar .header-band > div:first-child {
+  color: inherit;
+}
+.sidebar .header-band .small-muted {
+  color: var(--color-secondary);
+}
+
 /* Section title and rule inside content */
 .section-title {
   font-family: var(--font-title);
@@ -428,6 +442,13 @@ h3 {
   margin-bottom: 8px;
 }
 
+/* Sidebar content wrapper styling (normal view) */
+.sidebar-content-wrapper {
+  background: var(--sidebar-bg, #F5EDE6);
+  padding: 12px;
+  border-radius: var(--radius);
+}
+
 /* Mobile override (placed after sticky rule to ensure precedence) */
 @media (max-width: 900px) {
   .sidebar {
@@ -454,6 +475,26 @@ h3 {
   padding-left: 8px;
   padding-right: 8px;
 }
+
+/* Style header-band in sidebar for PDF only */
+.export-pdf .sidebar .header-band {
+  display: block !important;
+  background: var(--header-band);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  box-shadow: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.export-pdf .sidebar .header-band > div:first-child {
+  color: #fff;
+}
+.export-pdf .sidebar .header-band .small-muted {
+  color: #E2E8F0;
+}
 .export-pdf .layout {
   /* Full width layout: sidebar above content */
   grid-template-columns: 1fr;
@@ -476,6 +517,7 @@ h3 {
 }
 .export-pdf .content-mobile-offset {
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .export-pdf img {
   max-width: 100% !important;
@@ -498,11 +540,17 @@ h3 {
 .export-pdf .sidebar > div:first-child {
   display: none !important; /* Hide avatar container */
 }
-.export-pdf .header-band {
-  display: none !important; /* Hide header band with name and role */
+.export-pdf .content-mobile-offset .header-band {
+  display: none !important; /* Hide header band with name and role in content section */
 }
 .export-pdf .sidebar .divider:last-of-type {
   display: none !important; /* Hide divider above footer */
+}
+.export-pdf .sidebar .header-band + .divider {
+  display: none !important; /* Hide divider after header-band (before sidebar-content-wrapper) */
+}
+.export-pdf .sidebar-content-wrapper + .divider {
+  display: none !important; /* Hide divider after sidebar-content-wrapper (before toolbar) */
 }
 .export-pdf .section-rule {
   display: none !important; /* Hide dividers below section titles */
@@ -513,6 +561,13 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 16px;
+  background: var(--sidebar-bg, #F5EDE6);
+  padding: 12px;
+  border-radius: var(--radius);
+}
+.export-pdf .sidebar-content-wrapper h4 {
+  margin-top: 0; /* Remove space above COORDONNÉES and RÉFÉRENCES labels */
+  margin-bottom: 0; /* Remove space below COORDONNÉES and RÉFÉRENCES labels */
 }
 .export-pdf .contact-section {
   grid-column: 1;
@@ -537,7 +592,8 @@ h3 {
 .export-pdf .header-band { padding: 18px; }
 .export-pdf .content-card { padding: 12px; }
 .export-pdf .section { 
-  margin-top: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .export-pdf .section:first-of-type { margin-top: 0; } /* Remove top margin from first section (PROFIL) */
 .export-pdf .hr { margin: 14px 0; }
@@ -547,7 +603,7 @@ h3 {
 .export-pdf .grid-2 { gap: 12px; }
 .export-pdf .sidebar .divider { margin: 4px 0; } /* Reduce divider margins in sidebar */
 .export-pdf .sidebar .divider:first-of-type { margin-top: 2px; margin-bottom: 4px; } /* Reduce space after first divider */
-.export-pdf .sidebar-content-wrapper { margin-top: 4px; } /* Reduce space before COORDONNÉES */
+.export-pdf .sidebar-content-wrapper { margin-top: 0; } /* Remove space before COORDONNÉES */
 .export-pdf .layout { gap: 6px; } /* Reduce gap between sidebar and content */
 
 /* Export PDF type scaling (smaller fonts to fit fewer pages) */
@@ -583,8 +639,8 @@ h3 {
 }
 .export-pdf .section-title {
   font-size: 11px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .export-pdf .list li {
   margin: 2px 0;            /* tighter list spacing */
@@ -671,6 +727,12 @@ h3 {
   margin-bottom: 0;
 }
 
+/* Force page break before specific elements */
+.page-break-before {
+  page-break-before: always;
+  break-before: page;
+}
+
 /* Remove extra spacing that could cause gaps */
 .export-pdf .section:last-child {
   margin-bottom: 0;
@@ -706,5 +768,10 @@ h3 {
   .section-title {
     page-break-after: avoid;
     break-after: avoid;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
   }
 }
