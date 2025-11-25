@@ -638,8 +638,8 @@ h3 {
   margin-top: 0;
 }
 .export-pdf .section-title {
-  font-size: 11px;
-  margin-top: 0;
+  font-size: 12px;
+  margin-top: 8px;
   margin-bottom: 0;
 }
 .export-pdf .list li {
@@ -649,7 +649,7 @@ h3 {
 /* Reduce font size by 1pt for COMPÉTENCES block and all sections below it */
 .export-pdf .section:nth-of-type(2) .section-title,
 .export-pdf .section:nth-of-type(n+2) .section-title {
-  font-size: 10px; /* 11px - 1pt */
+  font-size: 11px; /* 12px - 1pt */
 }
 .export-pdf .section:nth-of-type(2),
 .export-pdf .section:nth-of-type(n+2) {
@@ -670,7 +670,7 @@ h3 {
 
 /* Additional reduction for COMPÉTENCES block only (2nd section) */
 .export-pdf .section:nth-of-type(2) .section-title {
-  font-size: 10px; /* Keep section title normal */
+  font-size: 11px; /* Keep section title normal */
 }
 .export-pdf .section:nth-of-type(2) {
   font-size: 11px; /* Keep base font normal */
@@ -692,45 +692,9 @@ h3 {
   gap: 8px; /* Reduce gap between cards */
 }
 
-/* Page break control for PDF export */
-.export-pdf .experience-item,
-.export-pdf .competencies-grid > div {
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-
-.export-pdf .section,
-.export-pdf .content-card {
-  page-break-inside: auto;
-  break-inside: auto;
-}
-
-.export-pdf .section {
-  page-break-after: auto;
-  break-after: auto;
-  page-break-before: auto;
-  break-before: auto;
-}
-
-/* Prevent orphaned section titles */
-.export-pdf .section-title {
-  page-break-after: avoid;
-  break-after: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-
 /* Keep experience items together */
 .export-pdf .experience-item {
-  page-break-inside: avoid;
-  break-inside: avoid;
   margin-bottom: 0;
-}
-
-/* Force page break before specific elements */
-.page-break-before {
-  page-break-before: always;
-  break-before: page;
 }
 
 /* Remove extra spacing that could cause gaps */
@@ -751,27 +715,4 @@ h3 {
   .header-band { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { color: inherit; text-decoration: none; }
   .focus-ring:focus-visible { outline: none; }
-  
-  /* Page break control for print */
-  .experience-item,
-  .competencies-grid > div {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  .section,
-  .content-card {
-    page-break-inside: auto;
-    break-inside: auto;
-  }
-  
-  .section-title {
-    page-break-after: avoid;
-    break-after: avoid;
-  }
-
-  .page-break-before {
-    page-break-before: always;
-    break-before: page;
-  }
 }

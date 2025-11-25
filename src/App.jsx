@@ -147,9 +147,9 @@ export default function App() {
         filename: `${fileBaseName}.pdf`,
         // Use millimeters for precise A4 sizing and margins
         margin: 10, // mm
-        image: { type: "jpeg", quality: 0.98 },
+        image: { type: "jpeg", quality: 1 },
         html2canvas: {
-          scale: 2,
+          scale: 4,
           useCORS: true,
           letterRendering: true,
           scrollY: 0,
@@ -642,15 +642,9 @@ export default function App() {
                 {t.ui?.experience || (lang === "fr" ? "Expérience" : "Experience")}
               </div>
               <div className="section-rule" />
-                {t.experience.map((exp, i) => {
-                  // Insert page break before the 4th item (index 3)
-                  const needsPageBreak = i === 3;
-                  
-                  return (
-                    <>
-                      {needsPageBreak && <div className="html2pdf__page-break" style={{ height: 0, margin: 0, padding: 0 }} />}
-                      <div className="experience-item content-card" key={i}>
-                        <div className="experience-meta">
+                {t.experience.map((exp, i) => (
+                  <div className="experience-item content-card" key={i}>
+                    <div className="experience-meta">
                       {companyLogos[getCompanyKey(exp.company)] && (
                         <img
                           className="experience-logo"
@@ -686,10 +680,8 @@ export default function App() {
                         ))}
                       </ul>
                     )} */}
-                      </div>
-                    </>
-                  );
-                })}
+                  </div>
+                ))}
             </div>
           )}
 
