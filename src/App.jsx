@@ -173,68 +173,68 @@ export default function App() {
     }
   }
 
-  function handleExportWord() {
-    try {
-      const node = document.querySelector("main");
-      if (!node) return;
-      const clone = node.cloneNode(true);
+  // function handleExportWord() {
+  //   try {
+  //     const node = document.querySelector("main");
+  //     if (!node) return;
+  //     const clone = node.cloneNode(true);
 
-      // Remove toolbar/buttons from export
-      clone.querySelectorAll(".toolbar").forEach((el) => el.remove());
+  //     // Remove toolbar/buttons from export
+  //     clone.querySelectorAll(".toolbar").forEach((el) => el.remove());
 
-      // Ensure image sources are absolute
-      clone.querySelectorAll("img").forEach((img) => {
-        const src = img.getAttribute("src");
-        if (src) {
-          const abs = new URL(src, document.baseURI).href;
-          img.setAttribute("src", abs);
-        }
-      });
+  //     // Ensure image sources are absolute
+  //     clone.querySelectorAll("img").forEach((img) => {
+  //       const src = img.getAttribute("src");
+  //       if (src) {
+  //         const abs = new URL(src, document.baseURI).href;
+  //         img.setAttribute("src", abs);
+  //       }
+  //     });
 
-      const styles = `
-  body { font-family: Arial, sans-serif; color: #0F172A; }
-  h1 { font-size: 28px; margin: 0 0 8px; }
-  h2 { font-size: 20px; margin: 24px 0 8px; }
-  h3 { font-size: 16px; margin: 12px 0 4px; }
-  .muted, .small-muted { color: #475569; }
-  .list, .bullets { padding-left: 18px; }
-  .section-title { text-transform: uppercase; font-size: 14px; letter-spacing: .08em; font-weight: 700; margin: 16px 0 6px; }
-  .section-rule { height: 1px; background: #E2E8F0; margin: 8px 0 16px; }
-  .experience-item { border-bottom: 1px solid #E2E8F0; padding: 10px 0; }
-  .experience-item:last-child { border-bottom: 0; }
-  .content-card { border: 1px solid #E2E8F0; padding: 12px; border-radius: 8px; }
-  .grid-2 { display: block; }
-  img { max-width: 100%; height: auto; }
-      `.trim();
+  //     const styles = `
+  // body { font-family: Arial, sans-serif; color: #0F172A; }
+  // h1 { font-size: 28px; margin: 0 0 8px; }
+  // h2 { font-size: 20px; margin: 24px 0 8px; }
+  // h3 { font-size: 16px; margin: 12px 0 4px; }
+  // .muted, .small-muted { color: #475569; }
+  // .list, .bullets { padding-left: 18px; }
+  // .section-title { text-transform: uppercase; font-size: 14px; letter-spacing: .08em; font-weight: 700; margin: 16px 0 6px; }
+  // .section-rule { height: 1px; background: #E2E8F0; margin: 8px 0 16px; }
+  // .experience-item { border-bottom: 1px solid #E2E8F0; padding: 10px 0; }
+  // .experience-item:last-child { border-bottom: 0; }
+  // .content-card { border: 1px solid #E2E8F0; padding: 12px; border-radius: 8px; }
+  // .grid-2 { display: block; }
+  // img { max-width: 100%; height: auto; }
+  //     `.trim();
 
-      const html =
-        `<!DOCTYPE html>
-  <html>
-  <head>
-  <meta charset="utf-8">
-  <title>${document.title}</title>
-  <base href="${document.baseURI}">
-  <style>${styles}</style>
-  </head>
-  <body>` +
-        clone.outerHTML +
-        `</body></html>`;
+  //     const html =
+  //       `<!DOCTYPE html>
+  // <html>
+  // <head>
+  // <meta charset="utf-8">
+  // <title>${document.title}</title>
+  // <base href="${document.baseURI}">
+  // <style>${styles}</style>
+  // </head>
+  // <body>` +
+  //       clone.outerHTML +
+  //       `</body></html>`;
 
-      const blob = new Blob(["\ufeff", html], { type: "application/msword" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${fileBaseName}.doc`;
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }, 0);
-    } catch (err) {
-      console.error("Word export failed", err);
-    }
-  }
+  //     const blob = new Blob(["\ufeff", html], { type: "application/msword" });
+  //     const url = URL.createObjectURL(blob);
+  //     const a = document.createElement("a");
+  //     a.href = url;
+  //     a.download = `${fileBaseName}.doc`;
+  //     document.body.appendChild(a);
+  //     a.click();
+  //     setTimeout(() => {
+  //       document.body.removeChild(a);
+  //       URL.revokeObjectURL(url);
+  //     }, 0);
+  //   } catch (err) {
+  //     console.error("Word export failed", err);
+  //   }
+  // }
 
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
@@ -299,7 +299,7 @@ export default function App() {
   // Social icons from public/
   const linkedinIcon = `${basePath}Linkedin.png`;
   const pdfIcon = `${basePath}pdf.png`;
-  const wordIcon = `${basePath}word.png`;
+  // const wordIcon = `${basePath}word.png`;
 
   // Company logos from public/
   const companyLogos = {
@@ -560,7 +560,7 @@ export default function App() {
               <Icon name="printer" size={20} />
             </button>
 
-            <button
+            {/* <button
               type="button"
               className="focus-ring"
               onClick={handleExportWord}
@@ -575,7 +575,7 @@ export default function App() {
               }}
             >
               <img src={wordIcon} alt="" style={{ width: 20, height: 20, display: "block" }} />
-            </button>
+            </button> */}
           </div>
           <div className="divider" />
           <footer className="small-muted" style={{ marginTop: 8, fontSize: 12, textAlign: "center" }}>
